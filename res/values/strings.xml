@@ -4,5 +4,7 @@
     <string name="app_name">14th Street Pizza</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    
+    <string name="app_id">226192290871422</string>
 
 </resources>
