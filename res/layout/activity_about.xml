@@ -1,0 +1,34 @@
+<ScrollView 
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+	   android:background="@drawable/background"
+       xmlns:android="http://schemas.android.com/apk/res/android">
+	   
+	   <LinearLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    android:orientation="vertical"
+		    android:textAlignment="center" >
+		
+		    <ImageView
+		        android:id="@+id/imageView1"
+		        android:layout_width="120dp"
+		        android:layout_height="162dp"
+		        android:layout_gravity="center"
+		        android:layout_margin="5dp"
+		        android:contentDescription=""
+		        android:src="@drawable/aboutus_large" />
+		
+		    <TextView
+		        android:id="@+id/textView1"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="20dp"
+		        android:gravity="center"
+		        android:layout_marginRight="20dp"
+		        android:layout_weight="1"
+		        android:text="@string/about"
+		        android:textSize="12sp" />
+		
+		</LinearLayout>
+ </ScrollView>

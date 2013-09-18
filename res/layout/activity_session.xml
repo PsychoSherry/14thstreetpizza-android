@@ -32,6 +32,7 @@
         android:layout_gravity="center"
         android:background="@null"
         android:scaleType="centerInside"
+            android:onClick="OpenOrderPage"
         android:src="@drawable/orderonline" />
     
     <LinearLayout
@@ -42,15 +43,6 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:textAlignment="center" >
-        
-        <ImageButton
-            android:id="@+id/button_contact"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:background="@null"
-            android:scaleType="centerInside"
-            android:src="@drawable/contactus" />
                 
         <ImageButton
             android:id="@+id/button_about"
@@ -59,7 +51,18 @@
             android:layout_gravity="center"
             android:background="@null"
             android:scaleType="centerInside"
+            android:onClick="OpenAboutPage"
             android:src="@drawable/aboutus" />
+        
+        <ImageButton
+            android:id="@+id/button_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:scaleType="centerInside"
+            android:onClick="OpenContactPage"
+            android:src="@drawable/contactus" />
 
     </LinearLayout>
     

@@ -39,6 +39,20 @@ public class SessionActivity extends Activity {
 			userimage.setImageBitmap(APIclient.facebook_picture);
         
 	}
+
+	public void OpenOrderPage(View view) {
+		
+	}
+	
+	public void OpenAboutPage(View view) {
+		Intent aboutpage = new Intent(getApplicationContext(), AboutActivity.class);
+        startActivity(aboutpage);
+	}
+	
+	public void OpenContactPage(View view) {
+		
+	}
+	
 	
 	public void logout(View view) {
 		MyMenuOptions.logout(SessionActivity.this);
