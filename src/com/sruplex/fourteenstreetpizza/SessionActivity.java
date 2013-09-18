@@ -50,7 +50,8 @@ public class SessionActivity extends Activity {
 	}
 	
 	public void OpenContactPage(View view) {
-		
+		Intent contactpage = new Intent(getApplicationContext(), ContactActivity.class);
+        startActivity(contactpage);	
 	}
 	
 	

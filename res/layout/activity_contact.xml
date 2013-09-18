@@ -4,7 +4,90 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:orientation="vertical"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
     android:textAlignment="center" >
     
-
+    <ScrollView 
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content">
+	   
+	   <LinearLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    android:orientation="vertical"
+		    android:textAlignment="center" >
+		    		
+			<ImageView
+				android:id="@+id/imageView1"
+				android:layout_width="120dp"
+				android:layout_height="162dp"
+				android:layout_gravity="center"
+				android:layout_margin="5dp"
+				android:contentDescription=""
+				android:src="@drawable/contactus_large" />
+		
+			<EditText
+			    android:id="@+id/contact_name"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:ems="10"
+			    android:hint="Name"
+		        android:imeOptions="actionNext"
+		        android:nextFocusDown="@+id/contact_email"
+		        android:nextFocusForward="@+id/contact_email"
+			    android:inputType="textPersonName" >
+		
+			    <requestFocus />
+			</EditText>
+		
+			<EditText
+			    android:id="@+id/contact_email"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:ems="10"
+			    android:hint="Email"
+		        android:imeOptions="actionNext"
+		        android:nextFocusDown="@+id/contact_number"
+		        android:nextFocusForward="@+id/contact_number"
+			    android:inputType="textEmailAddress" />
+		
+			<EditText
+			    android:id="@+id/contact_number"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:ems="10"
+			    android:hint="Phone Number"
+		        android:imeOptions="actionNext"
+		        android:nextFocusDown="@+id/contact_message"
+		        android:nextFocusForward="@+id/contact_message"
+			    android:inputType="phone" />
+		
+			<EditText
+			    android:id="@+id/contact_message"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:ems="10"
+			    android:hint="Message"
+		        android:imeOptions="actionDone"
+			    android:inputType="textMultiLine" />
+		
+			<ImageButton
+			    android:id="@+id/contact_submit"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_gravity="right"
+			    android:layout_marginRight="10dp"
+			    android:layout_marginTop="10dp"
+			    android:background="@null"
+			    android:onClick="SubmitContactForm"
+			    android:src="@drawable/submitbutton" />
+			
+			<Space
+		        android:layout_width="match_parent"
+		        android:layout_height="0dip"
+		        android:layout_weight="1" />
+			
+			</LinearLayout>
+		</ScrollView>
 </LinearLayout>
