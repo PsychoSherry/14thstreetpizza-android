@@ -1,0 +1,130 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:textAlignment="center" >
+    
+    <ScrollView 
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content">
+       
+	   <LinearLayout
+	       android:layout_width="fill_parent"
+	       android:layout_height="fill_parent"
+	       android:layout_gravity="center"
+	       android:layout_marginTop="10dp"
+	       android:gravity="center|center_horizontal"
+	       android:orientation="vertical"
+	       android:paddingLeft="7dp"
+	       android:paddingRight="7dp"
+	       android:textAlignment="center" >
+
+	       <TextView
+	           android:id="@+id/textView1"
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"
+	           android:layout_gravity="center"
+	           android:text="Add Items to your Order:"
+	           android:textAppearance="?android:attr/textAppearanceMedium"
+	           android:visibility="gone" />
+	   
+		   <LinearLayout
+		       android:layout_width="fill_parent"
+		       android:layout_height="fill_parent"
+		       android:layout_gravity="center"
+		       android:gravity="center|center_horizontal"
+		       android:orientation="horizontal"
+		       android:paddingLeft="7dp"
+		       android:paddingRight="7dp"
+		       android:textAlignment="center" >	       
+		       
+			   <Space
+			       android:layout_width="0dip"
+			       android:layout_height="match_parent"
+			       android:layout_weight="4" />
+		       
+			   <Space
+			       android:layout_width="0dip"
+			       android:layout_height="match_parent"
+			       android:layout_weight="1" />
+			    		
+				<ImageButton
+				    android:id="@+id/order_bt_menu"
+				    android:layout_width="65dp"
+				    android:layout_height="65dp"
+				    android:layout_gravity="center"
+				    android:layout_margin="5dp"
+				    android:background="@null"
+				    android:contentDescription=""
+				    android:scaleType="centerInside"
+				    android:src="@drawable/menu_large" />
+				
+				<ImageButton
+				    android:id="@+id/order_bt_createpizza"
+				    android:layout_width="130dp"
+				    android:layout_height="100dp"
+				    android:layout_gravity="center"
+				    android:layout_marginLeft="10dp"
+				    android:layout_marginRight="10dp"
+				    android:background="@null"
+				    android:contentDescription=""
+				    android:scaleType="centerInside"
+				    android:src="@drawable/createyourpizza" />
+				
+				<ImageButton
+				    android:id="@+id/order_bt_deals"
+				    android:layout_width="65dp"
+				    android:layout_height="65dp"
+				    android:layout_gravity="center"
+				    android:layout_margin="5dp"
+				    android:background="@null"
+				    android:contentDescription=""
+				    android:scaleType="centerInside"
+				    android:src="@drawable/deals" />
+				
+			   <Space
+			       android:layout_width="0dip"
+			       android:layout_height="match_parent"
+			       android:layout_weight="4" />
+			</LinearLayout>
+			
+		   <LinearLayout
+		       android:layout_width="fill_parent"
+		       android:layout_height="fill_parent"
+		       android:layout_gravity="center"
+		       android:layout_marginTop="20dp"
+		       android:gravity="center|center_horizontal"
+		       android:orientation="vertical"
+		       android:paddingLeft="7dp"
+		       android:paddingRight="7dp"
+		       android:textAlignment="center" >
+
+		       <ImageView
+		           android:id="@+id/imageView2"
+		           android:layout_width="150dp"
+		           android:layout_height="wrap_content"
+		           android:src="@drawable/your_order" />
+	 
+		   </LinearLayout>
+	       
+	   </LinearLayout>
+	</ScrollView>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" />
+
+    <ImageButton
+        android:id="@+id/order_bt_complete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:background="@null"
+        android:scaleType="centerInside"
+        android:src="@drawable/bt_completeorder" />
+
+</LinearLayout>

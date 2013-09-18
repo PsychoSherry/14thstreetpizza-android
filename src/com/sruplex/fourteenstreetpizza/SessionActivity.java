@@ -6,7 +6,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.facebook.Session;
@@ -41,7 +40,8 @@ public class SessionActivity extends Activity {
 	}
 
 	public void OpenOrderPage(View view) {
-		
+		Intent orderpage = new Intent(getApplicationContext(), OrderActivity.class);
+        startActivity(orderpage);
 	}
 	
 	public void OpenAboutPage(View view) {
