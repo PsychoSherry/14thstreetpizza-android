@@ -1,9 +1,15 @@
 package com.sruplex.fourteenstreetpizza;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.SystemClock;
 import android.util.Log;
@@ -19,6 +25,9 @@ public class APIclient {
   private static AsyncHttpClient client = new AsyncHttpClient();
   public static String api_auth_token = null;
   public static String api_error = null; 
+  public static String facebook_id = null;
+  public static String facebook_name = null;
+  public static Bitmap facebook_picture = null;
   
   // ---- API Authorization --------------------------------
   public static boolean isAuthorized(){
@@ -46,7 +55,7 @@ public class APIclient {
           public void onFailure(Throwable e, JSONObject response) {
         	  try {
   				api_error = response.getString("error");
-        		Log.v("BADMOTHERFUCKER", response.toString());
+        		Log.v("14SP", response.toString());
   			} catch (JSONException e1) { e1.printStackTrace(); }
         	  
         	  resp.onFailure();
@@ -116,11 +125,39 @@ public class APIclient {
 	  if (params == null)
 		  params = new RequestParams();
 	  params.put("auth_token", api_auth_token);
-	  Log.v("NIGGER", params.toString());
+	  Log.v("14SP", params.toString());
       client.post(getAbsoluteUrl(url), params, responseHandler);
   }
 
   private static String getAbsoluteUrl(String relativeUrl) {
       return BASE_URL + relativeUrl;
+  }
+  
+  
+  // Facebook Calls
+  public static Bitmap GetFacebookImage(String id, Boolean large){
+  	String uri = "https://graph.facebook.com/" + id + "/picture?type=large&";
+  	if (large)
+  		uri += "width=150&height=150";
+  	else
+  		uri += "width=100&height=100";
+  	
+  	URL img_value = null;
+  	
+		try   { img_value = new URL(uri); }
+		catch (MalformedURLException e1) { e1.printStackTrace(); }
+  	
+  	try {
+			return BitmapFactory.decodeStream(img_value.openConnection().getInputStream());
+		} catch (IOException e) { e.printStackTrace(); }
+  	
+  	return null;
+  }
+  
+  public static void DownloadUserImage(){
+	  if (facebook_id != null) {
+		  facebook_picture = GetFacebookImage(facebook_id, false);
+	  } else
+		  Log.v("14SP", "FBID is null");
   }
 }

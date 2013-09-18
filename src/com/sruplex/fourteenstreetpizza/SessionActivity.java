@@ -2,8 +2,12 @@ package com.sruplex.fourteenstreetpizza;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.facebook.Session;
 
@@ -14,6 +18,25 @@ public class SessionActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_session);
+		
+		final TextView  username  = (TextView)  findViewById (R.id.username);
+		final ImageView userimage = (ImageView) findViewById (R.id.userimage);
+
+		username.setText(APIclient.facebook_name);
+		if (APIclient.facebook_picture == null) {
+            new AsyncTask<Void, Void, Void>() {
+				@Override
+					protected Void doInBackground(Void... unused) {
+                    APIclient.DownloadUserImage();
+					return null;
+				}
+				protected void onPostExecute(Void unused) {
+					if (APIclient.facebook_picture != null)
+						userimage.setImageBitmap(APIclient.facebook_picture);
+				}
+            }.execute();
+		} else
+			userimage.setImageBitmap(APIclient.facebook_picture);
         
 	}
 	
@@ -40,4 +63,6 @@ public class SessionActivity extends Activity {
     	
     	public static void newOrder() {  }
     }
+    
+
 }

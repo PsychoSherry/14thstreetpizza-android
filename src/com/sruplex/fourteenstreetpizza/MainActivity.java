@@ -22,7 +22,6 @@ import com.facebook.model.GraphUser;
 import com.loopj.android.http.RequestParams;
 
 public class MainActivity extends Activity {
-    public static String user_ID = null;
     public static Boolean logged = false;
     private TextView mytext;
     private Button buttonLoginLogout;
@@ -60,8 +59,8 @@ public class MainActivity extends Activity {
         final Session session = Session.getActiveSession();
         if (session != null && session.isOpened()) {
             mytext.setText("You're Logged in to facebook");
-            Log.v("fb",session.getAccessToken());
-            buttonLoginLogout.setText("logout");
+            Log.v("14SP",session.getAccessToken());
+            buttonLoginLogout.setText("Logout");
 //            buttonLoginLogout.setVisibility(Button.GONE);
             buttonLoginLogout.setOnClickListener(new OnClickListener() {
                 public void onClick(View view) { Logout(); }
@@ -73,10 +72,11 @@ public class MainActivity extends Activity {
                     // If the response is successful
                     if (session == Session.getActiveSession()) {
                         if (user != null) {
-                            user_ID = user.getId();
+                            APIclient.facebook_id = user.getId();
+                            APIclient.facebook_name = user.getName();
                             CreateCustomServerSession(session);
                         } else {
-                        	Log.v("niggers", "requested user is null");
+                        	Log.v("14SP", "requested user is null");
                         	mytext.setText("failed");
                         }
                     }   
@@ -97,15 +97,18 @@ public class MainActivity extends Activity {
     private void CreateCustomServerSession(Session session){
         final ProgressBar progress = (ProgressBar)findViewById(R.id.progressBar1);
         if (!APIclient.isAuthorized()) {                
-            progress.setVisibility(ProgressBar.VISIBLE);
             RequestParams params = new RequestParams();
-            params.put("fb_userid", user_ID);
+            params.put("fb_userid", APIclient.facebook_id);
             params.put("fb_token", session.getAccessToken());
             
             APIclient.AuthorizeAPI(params, new APIResponseHandler() {
             	@Override
             	public void onSuccess() {
             		mytext.setText("success");
+            	}
+            	@Override
+            	public void onStart() {
+                    progress.setVisibility(ProgressBar.VISIBLE);
             	}
             	@Override
             	public void onFailure() {
@@ -118,6 +121,7 @@ public class MainActivity extends Activity {
                     new AsyncTask<Void, Void, Void>() {
     					@Override
      					protected Void doInBackground(Void... unused) {
+    	                    APIclient.DownloadUserImage();
     						SystemClock.sleep(2500);
     						return null;
     					}
