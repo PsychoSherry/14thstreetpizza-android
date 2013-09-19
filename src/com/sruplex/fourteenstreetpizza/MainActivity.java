@@ -52,7 +52,8 @@ public class MainActivity extends Activity {
             }
         }
 
-        updateView();
+       //////////////// updateView();
+        StartSessionActivity();
     }
     
     private void updateView() {
