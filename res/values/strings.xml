@@ -9,4 +9,12 @@
     
     <string name="about">\nEvolving from a traditional family recipe, 14th Street Pizza Co. has come a long way. It was launched on 14th February 2011 and has established a strong identity in the pizza delivery business in Pakistan in only a year - so much so, that it was hard to keep up with the thriving demand when it was launched. That\'s when the real test began, but we faced the challenge with gusto and were soon back on the table with a bigger team and a bigger kitchen. The introducer of the 20-inch pizza in Pakistan, 14th Street Pizza Co. has grown from being a corner pizza delivery place in Karachi to one of the most recognized pizza delivery places, operating branches at 5 prime locations of Karachi: Khayaban-e-Shahbaz, Khayaban-e-Nishat, KDA, SMR, North Nazimabad; with plans of expanding to other cities and countries soon. \n\n\nThe first thing you notice about our pizza is the size. But that\'s just not it. At 14th Street Pizza Co. we use the freshest, finest ingredients along with the most delectable homemade sauces on a New York style thin crust to give you fuller taste and an unforgettable flavor. \n\n\nOur motto is to use crust to give you fuller taste and an unforgettable flavor. Our motto is to use premium quality ingredients to give you a pizza that not only looks and tastes great but is up to the highest standards of freshness and quality. Our homemade pizza sauces, available in mild, hot and extra hot, give you the choice to make your pizza the way you like it, while our fresh toppings and finest mozzarella cheese give your pizza a flavorful zing you will never forget. \n\n\nAt 14th Street Pizza Co. we believe in providing our customers with an exceptional customer service. We believe that our customers are our driving force and would like to make sure that they are 100% satisfied with our products. A passion for pizza and an unending devotion to keep delivering the biggest, yummiest pizza in town, fuelled by the love, encouragement and feedback of our fans, gives 14th Street Pizza Co. the power to expand beyond belief.\n\n</string>
 
+    
+    <string-array name="quantities">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    
 </resources>
