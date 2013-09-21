@@ -76,7 +76,6 @@ public class SessionActivity extends Activity {
             MainActivity.logged = false;
     	}
     	
-    	public static void newOrder() {  }
     }
     
 

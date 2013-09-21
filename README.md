@@ -18,7 +18,7 @@ You can download the app's APK here: https://github.com/PsychoSherry/14thstreetp
 Competition Entry Details
 -------------------------
 
-App Developed by: *Sheharyar Naseer (sheharyar.naseer @ gmail.com)*
+App Developed by: **Sheharyar Naseer (sheharyar.naseer @ gmail.com)**
 
 Location: I'm available at all three places; Karachi/Lahore/Islamabad
 

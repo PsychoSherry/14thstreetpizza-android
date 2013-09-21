@@ -26,7 +26,7 @@ public class RowAdapter extends ArrayAdapter<String>{
 		rowView = inflater.inflate(R.layout.row_order, parent, false);
 
 		TextView row_title = (TextView) rowView.findViewById(R.id.order_row_title);
-		TextView row_info = (TextView) rowView.findViewById(R.id.order_row_info);
+		TextView row_info  = (TextView) rowView.findViewById(R.id.order_row_info);
 		
 		row_title.setText(order_data[position]);
 		row_info.setText("yo bitches");
