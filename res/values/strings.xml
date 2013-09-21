@@ -17,4 +17,40 @@
         <item>4</item>
     </string-array>
     
+    <string-array name="order_deals">
+        <item>Slice Deal</item>
+        <item>Double Slice Deal</item>
+        <item>Midnight Deal 1</item>
+        <item>Midnight Deal 2</item>
+    </string-array>
+    
+    <string-array name="order_sauces">
+        <item>Mild</item>
+        <item>Hot</item>
+        <item>Extra Hot</item>
+    </string-array>
+    
+    <string-array name="order_flavors">
+        <item>Vegetarian</item>
+        <item>Pepperoni</item>
+        <item>Ground Beef</item>
+        <item>Chicken Tikka</item>
+        <item>Chicken Fajita</item>
+        <item>Cheese</item>
+    </string-array>
+    
+    <string-array name="order_sidelines">
+        <item>Cheesy Bread</item>
+        <item>Garlic Bread</item>
+        <item>Potato Skins</item>
+        <item>Potato Wedges</item>
+    </string-array>
+    
+    <string-array name="order_drinks">
+        <item>Coke</item>
+        <item>Diet Coke</item>
+        <item>Fanta</item>
+        <item>Sprite</item>
+    </string-array>
+    
 </resources>

@@ -9,6 +9,11 @@ package com.sruplex.fourteenstreetpizza;
 
 public final class R {
     public static final class array {
+        public static final int order_deals=0x7f090001;
+        public static final int order_drinks=0x7f090005;
+        public static final int order_flavors=0x7f090003;
+        public static final int order_sauces=0x7f090002;
+        public static final int order_sidelines=0x7f090004;
         public static final int quantities=0x7f090000;
     }
     public static final class attr {
@@ -393,18 +398,35 @@ containing a value of this type.
         public static final int logo=0x7f02004b;
         public static final int menu_large=0x7f02004c;
         public static final int orderonline=0x7f02004d;
-        public static final int submitbutton=0x7f02004e;
-        public static final int title_deals=0x7f02004f;
-        public static final int your_order=0x7f020050;
+        public static final int stripbar=0x7f02004e;
+        public static final int submitbutton=0x7f02004f;
+        public static final int title_deals=0x7f020050;
+        public static final int your_order=0x7f020051;
     }
     public static final class id {
+        public static final int CheckBox01=0x7f050042;
+        public static final int CheckBox02=0x7f050043;
+        public static final int CheckBox03=0x7f050044;
+        public static final int CheckBox04=0x7f050045;
+        public static final int CheckBox05=0x7f050046;
+        public static final int CheckBox06=0x7f050047;
         public static final int ImageView01=0x7f050035;
         public static final int ImageView02=0x7f050036;
-        public static final int action_settings=0x7f05003c;
+        public static final int Spinner01=0x7f05003b;
+        public static final int Spinner02=0x7f05003f;
+        public static final int Spinner03=0x7f050038;
+        public static final int Spinner04=0x7f05003d;
+        public static final int TextView01=0x7f05003a;
+        public static final int TextView02=0x7f05003e;
+        public static final int TextView03=0x7f050037;
+        public static final int TextView04=0x7f05003c;
+        public static final int TextView05=0x7f050040;
+        public static final int action_settings=0x7f05004d;
         public static final int button1=0x7f05000f;
         public static final int button_about=0x7f050017;
         public static final int button_contact=0x7f050018;
         public static final int button_order=0x7f050016;
+        public static final int checkBox1=0x7f050041;
         public static final int com_facebook_login_activity_progress_bar=0x7f05001e;
         public static final int com_facebook_picker_activity_circle=0x7f05001d;
         public static final int com_facebook_picker_checkbox=0x7f050020;
@@ -442,17 +464,18 @@ containing a value of this type.
         public static final int order_bt_createpizza=0x7f050010;
         public static final int order_bt_deals=0x7f050011;
         public static final int order_bt_menu=0x7f050007;
-        public static final int order_now_qty=0x7f05003a;
-        public static final int order_row_cancel=0x7f05003b;
-        public static final int order_row_img=0x7f050037;
-        public static final int order_row_info=0x7f050039;
-        public static final int order_row_title=0x7f050038;
+        public static final int order_now_qty=0x7f05004b;
+        public static final int order_row_cancel=0x7f05004c;
+        public static final int order_row_img=0x7f050048;
+        public static final int order_row_info=0x7f05004a;
+        public static final int order_row_title=0x7f050049;
         public static final int orderlist=0x7f050014;
         public static final int picker_subtitle=0x7f05002d;
         public static final int progressBar1=0x7f05000e;
         public static final int satellite=0x7f050002;
         public static final int search_box=0x7f05002c;
         public static final int small=0x7f050005;
+        public static final int spinner1=0x7f050039;
         public static final int terrain=0x7f050003;
         public static final int textView1=0x7f050008;
         public static final int textView2=0x7f050013;

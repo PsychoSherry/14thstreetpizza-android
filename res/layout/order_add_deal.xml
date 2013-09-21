@@ -1,78 +1,311 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="center|top"
+    android:layout_height="wrap_content"
     android:background="@drawable/background"
-    android:gravity="center|top"
     android:orientation="vertical"
-    android:padding="5dp"
     android:textAlignment="center" >
+    
+    <ScrollView 
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content">
+       
+	   <LinearLayout
+	       android:layout_width="fill_parent"
+	       android:layout_height="wrap_content"
+	       android:layout_gravity="center|top"
+	       android:gravity="center|top"
+	       android:orientation="vertical"
+	       android:padding="5dp"
+	       android:textAlignment="center" >
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/title_deals" />
+		    <ImageView
+		        android:id="@+id/imageView1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center"
+		        android:layout_marginBottom="10dp"
+		        android:layout_marginLeft="20dp"
+		        android:layout_marginRight="20dp"
+		        android:layout_marginTop="20dp"
+		        android:src="@drawable/title_deals" />
+		
+		    <TextView
+		        android:id="@+id/textView2"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginBottom="10dp"
+		        android:gravity="center"
+		        android:text="Select a Deal to add to your order:" />
+		
+			<LinearLayout
+			    android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+			    android:orientation="vertical"
+			    android:gravity="center|top"
+			    android:layout_gravity="center|top"
+			    android:textAlignment="center" >
+			    
+			    <LinearLayout
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_marginBottom="4dp" >
+			
+			        <ImageView
+			            android:id="@+id/imageView2"
+			            android:layout_width="wrap_content"
+			            android:layout_height="100dp"
+			            android:layout_marginRight="2dp"
+			            android:layout_weight="1"
+			            android:src="@drawable/deals_slice" />
+			
+			        <ImageView
+			            android:id="@+id/imageView3"
+			            android:layout_width="wrap_content"
+			            android:layout_height="100dp"
+			            android:layout_marginLeft="2dp"
+			            android:layout_weight="1"
+			            android:scaleType="centerInside"
+			            android:src="@drawable/deals_slice_double" />
+			
+			    </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:gravity="center"
-        android:text="Select a Deal to add to your order:" />
+			    <LinearLayout
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp" >
+			        <ImageView
+			            android:id="@+id/ImageView01"
+			            android:layout_width="wrap_content"
+			            android:layout_height="100dp"
+			            android:layout_marginRight="2dp"
+			            android:layout_weight="1"
+			            android:src="@drawable/deals_midnight_1" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_marginRight="2dp"
-            android:layout_weight="1"
-            android:src="@drawable/deals_slice" />
+			        <ImageView
+			            android:id="@+id/ImageView02"
+			            android:layout_width="wrap_content"
+			            android:layout_height="100dp"
+			            android:layout_marginLeft="2dp"
+			            android:layout_weight="1"
+			            android:scaleType="centerInside"
+			            android:src="@drawable/deals_midnight_2" />
+			    </LinearLayout>
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_marginLeft="2dp"
-            android:layout_weight="1"
-            android:scaleType="centerInside"
-            android:src="@drawable/deals_slice_double" />
+		    </LinearLayout>
 
-    </LinearLayout>
+		    <LinearLayout
+		        android:layout_width="fill_parent"
+		        android:layout_height="fill_parent"
+		        android:gravity="center|top"
+		        android:orientation="vertical"
+		        android:paddingLeft="10dp"
+		        android:paddingRight="10dp"
+		        android:paddingTop="20dp"
+		        android:textAlignment="center" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" >
+		        <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="5dp"
+		            android:layout_marginRight="5dp" >
 
-        <ImageView
-            android:id="@+id/ImageView01"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_marginRight="2dp"
-            android:layout_weight="1"
-            android:src="@drawable/deals_midnight_1" />
+		            <TextView
+		                android:id="@+id/TextView03"
+		                android:layout_width="110dp"
+		                android:layout_height="wrap_content"
+		                android:layout_gravity="center"
+		                android:text="Deal:"
+		                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <ImageView
-            android:id="@+id/ImageView02"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_marginLeft="2dp"
-            android:layout_weight="1"
-            android:scaleType="centerInside"
-            android:src="@drawable/deals_midnight_2" />
-    </LinearLayout>
+		            <Spinner
+		                android:id="@+id/Spinner03"
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_weight="1"
+		                android:entries="@array/order_deals" />
+		        </LinearLayout>
+
+		        <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="5dp"
+		            android:layout_marginRight="5dp" >
+
+		            <TextView
+		                android:id="@+id/textView1"
+		                android:layout_width="110dp"
+		                android:layout_height="wrap_content"
+		                android:layout_gravity="center"
+		                android:text="Sauce:"
+		                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		            <Spinner
+		                android:id="@+id/spinner1"
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_weight="1"
+		                android:entries="@array/order_sauces" />
+		        </LinearLayout>
+
+		        <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="5dp"
+		            android:layout_marginRight="5dp" >
+
+		            <TextView
+		                android:id="@+id/TextView01"
+		                android:layout_width="110dp"
+		                android:layout_height="wrap_content"
+		                android:layout_gravity="center"
+		                android:text="Flavor:"
+		                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		            <Spinner
+		                android:id="@+id/Spinner01"
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_weight="1"
+		                android:entries="@array/order_flavors" />
+		        </LinearLayout>
+
+		        <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="5dp"
+		            android:layout_marginRight="5dp"
+		            android:layout_weight="1" >
+
+		            <TextView
+		                android:id="@+id/TextView04"
+		                android:layout_width="110dp"
+		                android:layout_height="wrap_content"
+		                android:layout_gravity="center"
+		                android:text="Sideline:"
+		                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		            <Spinner
+		                android:id="@+id/Spinner04"
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_weight="1"
+		                android:entries="@array/order_sidelines" />
+		        </LinearLayout>
+
+		        <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="5dp"
+		            android:layout_marginRight="5dp" >
+
+		            <TextView
+		                android:id="@+id/TextView02"
+		                android:layout_width="110dp"
+		                android:layout_height="wrap_content"
+		                android:layout_gravity="center"
+		                android:text="Drink:"
+		                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		            <Spinner
+		                android:id="@+id/Spinner02"
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_weight="1"
+		                android:entries="@array/order_drinks" />
+		        </LinearLayout>
+
+		        <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="5dp"
+		            android:layout_marginRight="5dp"
+		            android:layout_weight="1" >
+
+		            <TextView
+		                android:id="@+id/TextView05"
+		                android:layout_width="110dp"
+		                android:layout_height="wrap_content"
+		                android:layout_gravity="center"
+		                android:text="Veggies:"
+		                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		            <GridLayout
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_weight="1"
+		                android:clipChildren="false"
+		                android:columnCount="2"
+		                android:layoutMode="opticalBounds"
+		                android:numColumns="auto_fit"
+		                android:orientation="horizontal"
+		                android:rowOrderPreserved="true"
+		                android:singleLine="false"
+		                android:stretchMode="columnWidth" >
+
+		                <CheckBox
+		                    android:id="@+id/checkBox1"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left"
+		                    android:checked="true"
+		                    android:text="Onions" />
+
+		                <CheckBox
+		                    android:id="@+id/CheckBox01"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left"
+		                    android:checked="true"
+		                    android:text="Tomatoes" />
+
+		                <CheckBox
+		                    android:id="@+id/CheckBox02"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left"
+		                    android:checked="true"
+		                    android:text="Capsicum" />
+
+		                <CheckBox
+		                    android:id="@+id/CheckBox03"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left"
+		                    android:checked="true"
+		                    android:text="Onions" />
+
+		                <CheckBox
+		                    android:id="@+id/CheckBox04"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left"
+		                    android:checked="true"
+		                    android:text="Onions" />
+
+		                <CheckBox
+		                    android:id="@+id/CheckBox05"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left"
+		                    android:checked="true"
+		                    android:text="Onions" />
+
+		                <CheckBox
+		                    android:id="@+id/CheckBox06"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left"
+		                    android:checked="true"
+		                    android:text="Onions" />
+
+		            </GridLayout>
+
+		        </LinearLayout>
+
+		    </LinearLayout>
+
+	    </LinearLayout>
+	</ScrollView>
 
 </LinearLayout>
