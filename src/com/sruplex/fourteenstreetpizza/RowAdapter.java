@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class RowAdapter extends ArrayAdapter<String>{
@@ -25,11 +26,13 @@ public class RowAdapter extends ArrayAdapter<String>{
 		View rowView;
 		rowView = inflater.inflate(R.layout.row_order, parent, false);
 
-		TextView row_title = (TextView) rowView.findViewById(R.id.order_row_title);
-		TextView row_info  = (TextView) rowView.findViewById(R.id.order_row_info);
+		TextView  row_title = (TextView)  rowView.findViewById(R.id.order_row_title);
+		TextView  row_info  = (TextView)  rowView.findViewById(R.id.order_row_info);
+		ImageView row_img   = (ImageView) rowView.findViewById(R.id.order_row_img);
 		
 		row_title.setText(order_data[position]);
-		row_info.setText("yo bitches");
+		row_info.setText(OrderValues.Description.get(position));
+		row_img.setBackgroundResource(OrderValues.Image.get(position));
 	
 		return rowView;
 	}

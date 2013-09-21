@@ -20,8 +20,8 @@ import android.widget.Spinner;
 
 
 public class OrderActivity extends Activity {
-	ListView orderlist = null;
-	int baseheight;
+	final static int BASEHEIGHT = 100;
+	static ListView orderlist = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,11 +49,7 @@ public class OrderActivity extends Activity {
 		
 		// Initialize Objects
 		orderlist = (ListView) findViewById (R.id.orderlist);
-//		baseheight = orderlist.getLayoutParams().height;
-		baseheight = 100;
 
-		orderlist.setLayoutParams(new LayoutParams(orderlist.getLayoutParams().width, (baseheight * sss.length) + 30));
-		orderlist.setAdapter(new RowAdapter(getApplicationContext(), sss));
 		
 		// Modify the ActionBar
         int myapi = android.os.Build.VERSION.SDK_INT;
@@ -63,6 +59,11 @@ public class OrderActivity extends Activity {
                 actionBar.setDisplayShowHomeEnabled(false);
         }        
         
+	}
+	
+	public static void RefreshOrderList(Context context) {
+		orderlist.setLayoutParams(new LayoutParams(orderlist.getLayoutParams().width, (BASEHEIGHT * OrderValues.Title.size()) + 30));
+		orderlist.setAdapter(new RowAdapter(context, OrderValues.Title.toArray(new String[OrderValues.Title.size()])));
 	}
 
 	public void OrderAdd_Pizza(View arg0){
@@ -96,7 +97,7 @@ public class OrderActivity extends Activity {
     		OrderValues.Description.add(description);
     	}
     	
-    	public static void NewDeal(Context context) {
+    	public static void NewDeal(final Context context) {
     		final LayoutInflater factory = LayoutInflater.from(context);
             View view = factory.inflate(R.layout.order_add_deal, null);
             
@@ -127,11 +128,12 @@ public class OrderActivity extends Activity {
 					AddOrder(
 						deal.getSelectedItem().toString(),
 						flavor.getSelectedItem().toString() + ", " + sauce.getSelectedItem().toString() + ", " + sideline.getSelectedItem().toString() + ", " + drink.getSelectedItem().toString(),
-						R.drawable.bt_deals,
+						R.drawable.deals,
 						GetDealPrice(deal.getSelectedItem().toString())
 					);
 					
 					alertview.dismiss();
+					RefreshOrderList(context);
 				}
             });
       	  

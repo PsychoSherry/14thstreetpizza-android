@@ -10,7 +10,7 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_gravity="center"
-        android:src="@drawable/com_facebook_button_check_off" />
+        android:src="@null" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -18,7 +18,7 @@
         android:layout_gravity="center"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="5dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="1dp"
         android:layout_weight="1"
         android:orientation="vertical" >
 
@@ -54,6 +54,7 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
         android:background="@null"
         android:scaleType="centerInside"
         android:src="@drawable/com_facebook_close" />
