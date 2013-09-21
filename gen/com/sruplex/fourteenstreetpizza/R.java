@@ -384,16 +384,23 @@ containing a value of this type.
         public static final int contactus_large=0x7f020042;
         public static final int createyourpizza=0x7f020043;
         public static final int deals=0x7f020044;
-        public static final int fb_login_button=0x7f020045;
-        public static final int ic_launcher=0x7f020046;
-        public static final int logo=0x7f020047;
-        public static final int menu_large=0x7f020048;
-        public static final int orderonline=0x7f020049;
-        public static final int submitbutton=0x7f02004a;
-        public static final int your_order=0x7f02004b;
+        public static final int deals_midnight_1=0x7f020045;
+        public static final int deals_midnight_2=0x7f020046;
+        public static final int deals_slice=0x7f020047;
+        public static final int deals_slice_double=0x7f020048;
+        public static final int fb_login_button=0x7f020049;
+        public static final int ic_launcher=0x7f02004a;
+        public static final int logo=0x7f02004b;
+        public static final int menu_large=0x7f02004c;
+        public static final int orderonline=0x7f02004d;
+        public static final int submitbutton=0x7f02004e;
+        public static final int title_deals=0x7f02004f;
+        public static final int your_order=0x7f020050;
     }
     public static final class id {
-        public static final int action_settings=0x7f050038;
+        public static final int ImageView01=0x7f050035;
+        public static final int ImageView02=0x7f050036;
+        public static final int action_settings=0x7f05003c;
         public static final int button1=0x7f05000f;
         public static final int button_about=0x7f050017;
         public static final int button_contact=0x7f050018;
@@ -423,7 +430,9 @@ containing a value of this type.
         public static final int contact_number=0x7f05000b;
         public static final int contact_submit=0x7f05000d;
         public static final int hybrid=0x7f050004;
+        public static final int imageView1=0x7f050033;
         public static final int imageView2=0x7f050012;
+        public static final int imageView3=0x7f050034;
         public static final int large=0x7f050006;
         public static final int list=0x7f050032;
         public static final int logout=0x7f05001b;
@@ -433,11 +442,11 @@ containing a value of this type.
         public static final int order_bt_createpizza=0x7f050010;
         public static final int order_bt_deals=0x7f050011;
         public static final int order_bt_menu=0x7f050007;
-        public static final int order_now_qty=0x7f050036;
-        public static final int order_row_cancel=0x7f050037;
-        public static final int order_row_img=0x7f050033;
-        public static final int order_row_info=0x7f050035;
-        public static final int order_row_title=0x7f050034;
+        public static final int order_now_qty=0x7f05003a;
+        public static final int order_row_cancel=0x7f05003b;
+        public static final int order_row_img=0x7f050037;
+        public static final int order_row_info=0x7f050039;
+        public static final int order_row_title=0x7f050038;
         public static final int orderlist=0x7f050014;
         public static final int picker_subtitle=0x7f05002d;
         public static final int progressBar1=0x7f05000e;
@@ -472,7 +481,8 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment=0x7f030011;
         public static final int dialog_loader=0x7f030012;
         public static final int empty_list=0x7f030013;
-        public static final int row_order=0x7f030014;
+        public static final int order_add_deal=0x7f030014;
+        public static final int row_order=0x7f030015;
     }
     public static final class menu {
         public static final int main=0x7f0a0000;
