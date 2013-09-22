@@ -484,10 +484,10 @@ containing a value of this type.
         public static final int order_deal_name=0x7f05003a;
         public static final int order_deal_sauce=0x7f05003b;
         public static final int order_deal_sideline=0x7f05003f;
-        public static final int order_now_qty=0x7f05006d;
         public static final int order_row_cancel=0x7f05006e;
         public static final int order_row_img=0x7f05006a;
         public static final int order_row_info=0x7f05006c;
+        public static final int order_row_qty=0x7f05006d;
         public static final int order_row_title=0x7f05006b;
         public static final int orderlist=0x7f050014;
         public static final int ordertotalcost=0x7f050016;

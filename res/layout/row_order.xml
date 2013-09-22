@@ -43,7 +43,7 @@
     </LinearLayout>
 
     <Spinner
-        android:id="@+id/order_now_qty"
+        android:id="@+id/order_row_qty"
         style="@android:style/TextAppearance.Widget.TextView.SpinnerItem"
         android:layout_width="50dp"
         android:layout_height="fill_parent"
@@ -51,11 +51,12 @@
 
     <ImageButton
         android:id="@+id/order_row_cancel"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="35dp"
+        android:layout_height="fill_parent"
         android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="5dp"
         android:background="@null"
+        android:padding="3dp"
         android:scaleType="centerInside"
         android:src="@drawable/com_facebook_close" />
 

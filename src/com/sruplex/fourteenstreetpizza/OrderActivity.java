@@ -63,6 +63,10 @@ public class OrderActivity extends Activity {
 		orderlist.setLayoutParams(new LayoutParams(orderlist.getLayoutParams().width, (BASEHEIGHT * OrderValues.Title.size()) + 30));
 		orderlist.setAdapter(new RowAdapter(context, OrderValues.Title.toArray(new String[OrderValues.Title.size()])));
 
+		UpdateOrderCostings(context);
+	}
+	
+	public static void UpdateOrderCostings(Context context){
 		Object temp_prc[] = OrderValues.Price.toArray();
 		Object temp_qty[] = OrderValues.Quantity.toArray();
 		

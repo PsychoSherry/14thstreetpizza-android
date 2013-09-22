@@ -229,10 +229,10 @@ int id order_deal_flavor 0x7f05003d
 int id order_deal_name 0x7f05003a
 int id order_deal_sauce 0x7f05003b
 int id order_deal_sideline 0x7f05003f
-int id order_now_qty 0x7f05006d
 int id order_row_cancel 0x7f05006e
 int id order_row_img 0x7f05006a
 int id order_row_info 0x7f05006c
+int id order_row_qty 0x7f05006d
 int id order_row_title 0x7f05006b
 int id orderlist 0x7f050014
 int id ordertotalcost 0x7f050016
