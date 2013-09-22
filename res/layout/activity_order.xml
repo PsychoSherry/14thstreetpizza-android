@@ -163,6 +163,7 @@
 	           android:layout_marginLeft="35dp"
 	           android:layout_marginRight="35dp"
 	           android:background="@null"
+	           android:onClick="OrderComplete"
 	           android:scaleType="centerInside"
 	           android:src="@drawable/bt_completeorder" />
 

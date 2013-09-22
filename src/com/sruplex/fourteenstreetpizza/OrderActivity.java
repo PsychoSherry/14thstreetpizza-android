@@ -90,6 +90,10 @@ public class OrderActivity extends Activity {
 	public void OrderAdd_Deal(View arg0){
 		OrderOptions.NewDeal(OrderActivity.this);
 	}
+	
+	public void OrderComplete(View arg0){
+		OrderOptions.CompleteOrder(OrderActivity.this);
+	}
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -106,6 +110,9 @@ public class OrderActivity extends Activity {
     	static String pizzaname;
     	static String pizzastyle;
     	static int pizzaimg;
+    	static View dialogmapview;
+    	static AlertDialog.Builder mapalertbuilder;
+        static AlertDialog mapalertfucker;
         
     	public static void AddOrder(String title, String description, Integer image, Integer price){
     		OrderValues.Title.add(title);
@@ -327,6 +334,47 @@ public class OrderActivity extends Activity {
           	  
                 alertview.show(); 
     		}
+    	}
+    	
+    	public static void CompleteOrder(final Context context) {
+    		final LayoutInflater factory = LayoutInflater.from(context);
+    		if (dialogmapview == null)
+    			dialogmapview = factory.inflate(R.layout.complete_order_map, null);
+            
+            ImageButton btn_cancel = (ImageButton) dialogmapview.findViewById (R.id.complete_map_cancel);
+            ImageButton btn_done   = (ImageButton) dialogmapview.findViewById (R.id.complete_map_done);
+          /*
+            Activity fragactivity = (Activity) context;
+            MyMapFragment mymapfragment = new MyMapFragment();
+            FragmentManager fragmentManager = fragactivity.getFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.content_frame, mymapfragment).commit();*/
+            
+            if (mapalertbuilder == null)   {         
+	            mapalertbuilder = new AlertDialog.Builder(context)
+	      	  		.setView(dialogmapview)
+	            	.setCancelable(true);
+
+	            mapalertfucker = mapalertbuilder.create();
+            }
+            
+            final AlertDialog mapalertview = mapalertfucker;
+            
+            btn_cancel.setOnClickListener(new OnClickListener(){
+				@Override
+				public void onClick(View arg0) {
+					mapalertview.dismiss();
+				}
+            });
+            
+            btn_done.setOnClickListener(new OnClickListener(){
+				@Override
+				public void onClick(View arg0) {
+					
+					mapalertview.dismiss();
+				}
+            });
+      	  
+            mapalertview.show();    		
     	}
     	
     	

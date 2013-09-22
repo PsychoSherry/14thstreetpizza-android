@@ -77,7 +77,8 @@
         android:layout_gravity="bottom"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:textAlignment="center" >
+        android:textAlignment="center"
+        android:visibility="gone" >
         
         <ImageView
             android:id="@+id/userimage"
