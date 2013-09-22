@@ -216,10 +216,10 @@ public class OrderActivity extends Activity {
 				public void onClick(View arg0) { alertview.dismiss(); NewDeal(context); }
             });
             showsides.setOnClickListener(new OnClickListener(){
-				public void onClick(View arg0) { alertview.dismiss(); }
+				public void onClick(View arg0) { alertview.dismiss(); NewSideline(context); }
             });
             showsweets.setOnClickListener(new OnClickListener(){
-				public void onClick(View arg0) { alertview.dismiss(); }
+				public void onClick(View arg0) { alertview.dismiss(); NewSweet(context); }
             });
             showdrinks.setOnClickListener(new OnClickListener(){
 				public void onClick(View arg0) { alertview.dismiss(); NewDrink(context); }
@@ -249,10 +249,80 @@ public class OrderActivity extends Activity {
 				@Override
 				public void onClick(View arg0) {
 					AddOrder(
-						"Drink: ",
+						"Drink",
 						drink_selc.getSelectedItem().toString(),
 						R.drawable.bt_drinks,
 						GetDrinkPrice(drink_selc.getSelectedItem().toString())
+					);
+					
+					alertview.dismiss();
+					RefreshOrderList(context);
+				}
+            });
+
+            alertview.show(); 
+    	}  	
+
+    	public static void NewSweet(final Context context){
+    		final LayoutInflater factory = LayoutInflater.from(context);
+            View view = factory.inflate(R.layout.menu_sweets, null);
+
+            final Spinner selector   = (Spinner)     view.findViewById (R.id.sweet_selector);
+            ImageButton   btn_cancel = (ImageButton) view.findViewById (R.id.sweet_cancel);
+            ImageButton   btn_done   = (ImageButton) view.findViewById (R.id.sweet_done);
+          
+            final AlertDialog alertview = new AlertDialog.Builder(context)
+      	  		.setView(view)
+            	.setCancelable(false)
+            	.create();
+
+            btn_cancel.setOnClickListener(new OnClickListener(){
+				public void onClick(View arg0) { alertview.dismiss(); }
+            });
+            
+            btn_done.setOnClickListener(new OnClickListener(){
+				@Override
+				public void onClick(View arg0) {
+					AddOrder(
+						"Sweet",
+						selector.getSelectedItem().toString(),
+						R.drawable.bt_sweet,
+						GetSweetPrice(selector.getSelectedItem().toString())
+					);
+					
+					alertview.dismiss();
+					RefreshOrderList(context);
+				}
+            });
+
+            alertview.show(); 
+    	}
+    	
+    	public static void NewSideline(final Context context){
+    		final LayoutInflater factory = LayoutInflater.from(context);
+            View view = factory.inflate(R.layout.menu_sidelines, null);
+
+            final Spinner selector   = (Spinner)     view.findViewById (R.id.sideline_selector);
+            ImageButton   btn_cancel = (ImageButton) view.findViewById (R.id.sideline_cancel);
+            ImageButton   btn_done   = (ImageButton) view.findViewById (R.id.sideline_done);
+          
+            final AlertDialog alertview = new AlertDialog.Builder(context)
+      	  		.setView(view)
+            	.setCancelable(false)
+            	.create();
+
+            btn_cancel.setOnClickListener(new OnClickListener(){
+				public void onClick(View arg0) { alertview.dismiss(); }
+            });
+            
+            btn_done.setOnClickListener(new OnClickListener(){
+				@Override
+				public void onClick(View arg0) {
+					AddOrder(
+						"Sideline",
+						selector.getSelectedItem().toString(),
+						R.drawable.bt_sidelines,
+						GetSidelinePrice(selector.getSelectedItem().toString())
 					);
 					
 					alertview.dismiss();
@@ -573,6 +643,27 @@ public class OrderActivity extends Activity {
     		else if (pizzaname.equals("Split the Half"))		return 999;
     		else if (pizzaname.equals("Half and Half"))			return 1799;
     		else if (pizzaname.equals("Full"))					return 1799;
+    		
+    		return 0;
+    	}
+    	
+    	public static Integer GetSweetPrice(String sweetname){
+    		if 		(sweetname.equals("Chocolate Cake (Full)"))			return 2099;
+    		else if (sweetname.equals("Chocolate Cake (Slice)"))		return 249;
+    		
+    		return 0;
+    	}
+    	
+    	public static Integer GetSidelinePrice(String sideline){
+    		if      (sideline.equals("Cheesy Bread"))					return 129;
+    		else if (sideline.equals("Chicken Wings (BBQ)"))			return 229;
+    		else if (sideline.equals("Chicken Wings (Crispy)"))			return 229;
+    		else if (sideline.equals("Chicken Wings (Spicy)"))			return 229;
+    		else if (sideline.equals("Chicky Bites (NonSpicy)"))		return 229;
+    		else if (sideline.equals("Chicky Bites (Spicy)"))			return 229;
+    		else if (sideline.equals("Garlic Bread"))					return 129;
+    		else if (sideline.equals("Potato Skins"))					return 129;
+    		else if (sideline.equals("Potato Wedges"))					return 129;
     		
     		return 0;
     	}

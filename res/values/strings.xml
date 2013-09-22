@@ -53,6 +53,23 @@
         <item>Sprite</item>
     </string-array>
     
+    <string-array name="menu_sweets">
+        <item>Chocolate Cake (Full)</item>
+        <item>Chocolate Cake (Slice)</item>
+    </string-array>
+    
+    <string-array name="menu_sidelines">
+		<item>Cheesy Bread</item>
+		<item>Chicken Wings (BBQ)</item>
+		<item>Chicken Wings (Crispy)</item>
+		<item>Chicken Wings (Spicy)</item>
+		<item>Chicky Bites (NonSpicy)</item>
+		<item>Chicky Bites (Spicy)</item>
+		<item>Garlic Bread</item>
+		<item>Potato Skins</item>
+		<item>Potato Wedges</item>
+    </string-array>
+    
     <string-array name="menu_drinks">
         <item>Apple Juice - Rs 60</item>
 			<item>Coke 1.5L - Rs 100</item>

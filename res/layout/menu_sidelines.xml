@@ -27,25 +27,25 @@
 		        android:layout_marginLeft="20dp"
 		        android:layout_marginRight="20dp"
 		        android:layout_marginTop="20dp"
-		        android:src="@drawable/bt_drinks" />
+		        android:src="@drawable/bt_sidelines" />
 		
 		    <TextView
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:layout_marginBottom="10dp"
 		        android:gravity="center"
-		        android:text="Select your Drink:"
+		        android:text="Select your Sideline:"
 		        android:textSize="18sp" />
 
 		    <Spinner
-		        android:id="@+id/drink_selector"
+		        android:id="@+id/sideline_selector"
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
 		        android:layout_marginBottom="15dp"
 		        android:layout_marginLeft="10dp"
 		        android:layout_marginRight="10dp"
 		        android:layout_marginTop="20dp"
-		        android:entries="@array/menu_drinks" />
+		        android:entries="@array/menu_sidelines" />
 		
 			<LinearLayout
 			    android:layout_width="fill_parent"
@@ -58,14 +58,14 @@
 			    android:textAlignment="center" >
 
 			    <ImageButton
-			        android:id="@+id/drink_cancel"
+			        android:id="@+id/sideline_cancel"
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
 			        android:background="@null"
 			        android:src="@drawable/bt_reset" />
 
 			    <ImageButton
-			        android:id="@+id/drink_done"
+			        android:id="@+id/sideline_done"
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
 			        android:layout_marginLeft="20dp"
