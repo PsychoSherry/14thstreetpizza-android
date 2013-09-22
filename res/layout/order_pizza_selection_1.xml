@@ -28,69 +28,29 @@
 		        android:layout_marginLeft="20dp"
 		        android:layout_marginRight="20dp"
 		        android:layout_marginTop="20dp"
-		        android:src="@drawable/title_deals" />
-		
-		    <TextView
-		        android:id="@+id/textView2"
-		        android:layout_width="wrap_content"
+		        android:src="@drawable/bt_createpizza" />
+
+		    <LinearLayout
+		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
+		        android:layout_gravity="center"
 		        android:layout_marginBottom="10dp"
-		        android:gravity="center"
-		        android:text="Select a Deal to add to your order:" />
-		
-			<LinearLayout
-			    android:layout_width="fill_parent"
-			    android:layout_height="fill_parent"
-			    android:orientation="vertical"
-			    android:gravity="center|top"
-			    android:layout_gravity="center|top"
-			    android:textAlignment="center" >
-			    
-			    <LinearLayout
-			        android:layout_width="match_parent"
-			        android:layout_height="wrap_content"
-			        android:layout_marginBottom="4dp" >
-			
-			        <ImageView
-			            android:id="@+id/imageView2"
-			            android:layout_width="wrap_content"
-			            android:layout_height="100dp"
-			            android:layout_marginRight="2dp"
-			            android:layout_weight="1"
-			            android:src="@drawable/deals_slice" />
-			
-			        <ImageView
-			            android:id="@+id/imageView3"
-			            android:layout_width="wrap_content"
-			            android:layout_height="100dp"
-			            android:layout_marginLeft="2dp"
-			            android:layout_weight="1"
-			            android:scaleType="centerInside"
-			            android:src="@drawable/deals_slice_double" />
-			
-			    </LinearLayout>
+		        android:gravity="center" >
 
-			    <LinearLayout
-			        android:layout_width="match_parent"
-			        android:layout_height="wrap_content" >
+		        <ImageView
+		            android:id="@+id/pizza_selection_img"
+		            android:layout_width="30dp"
+		            android:layout_height="30dp"
+		            android:layout_marginRight="15dp"
+		            android:src="@null" />
 
-			        <ImageView
-			            android:id="@+id/ImageView01"
-			            android:layout_width="wrap_content"
-			            android:layout_height="100dp"
-			            android:layout_marginRight="2dp"
-			            android:layout_weight="1"
-			            android:src="@drawable/deals_midnight_1" />
-
-			        <ImageView
-			            android:id="@+id/ImageView02"
-			            android:layout_width="wrap_content"
-			            android:layout_height="100dp"
-			            android:layout_marginLeft="2dp"
-			            android:layout_weight="1"
-			            android:scaleType="centerInside"
-			            android:src="@drawable/deals_midnight_2" />
-			    </LinearLayout>
+		        <TextView
+		            android:id="@+id/pizza_selection_title"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:gravity="center"
+		            android:text="Slice"
+		            android:textSize="20sp" />
 
 		    </LinearLayout>
 
@@ -111,28 +71,6 @@
 		            android:layout_marginRight="5dp" >
 
 		            <TextView
-		                android:id="@+id/TextView03"
-		                android:layout_width="110dp"
-		                android:layout_height="wrap_content"
-		                android:layout_gravity="center"
-		                android:text="Deal:"
-		                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-		            <Spinner
-		                android:id="@+id/order_deal_name"
-		                android:layout_width="match_parent"
-		                android:layout_height="wrap_content"
-		                android:layout_weight="1"
-		                android:entries="@array/order_deals" />
-		        </LinearLayout>
-
-		        <LinearLayout
-		            android:layout_width="match_parent"
-		            android:layout_height="wrap_content"
-		            android:layout_marginLeft="5dp"
-		            android:layout_marginRight="5dp" >
-
-		            <TextView
 		                android:id="@+id/textView1"
 		                android:layout_width="110dp"
 		                android:layout_height="wrap_content"
@@ -141,7 +79,7 @@
 		                android:textAppearance="?android:attr/textAppearanceMedium" />
 
 		            <Spinner
-		                android:id="@+id/order_deal_sauce"
+		                android:id="@+id/pizza_selection_sauce"
 		                android:layout_width="match_parent"
 		                android:layout_height="wrap_content"
 		                android:layout_weight="1"
@@ -163,56 +101,11 @@
 		                android:textAppearance="?android:attr/textAppearanceMedium" />
 
 		            <Spinner
-		                android:id="@+id/order_deal_flavor"
+		                android:id="@+id/pizza_selection_flavor"
 		                android:layout_width="match_parent"
 		                android:layout_height="wrap_content"
 		                android:layout_weight="1"
 		                android:entries="@array/order_flavors" />
-		        </LinearLayout>
-
-		        <LinearLayout
-		            android:layout_width="match_parent"
-		            android:layout_height="wrap_content"
-		            android:layout_marginLeft="5dp"
-		            android:layout_marginRight="5dp"
-		            android:layout_weight="1" >
-
-		            <TextView
-		                android:id="@+id/TextView04"
-		                android:layout_width="110dp"
-		                android:layout_height="wrap_content"
-		                android:layout_gravity="center"
-		                android:text="Sideline:"
-		                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-		            <Spinner
-		                android:id="@+id/order_deal_sideline"
-		                android:layout_width="match_parent"
-		                android:layout_height="wrap_content"
-		                android:layout_weight="1"
-		                android:entries="@array/order_sidelines" />
-		        </LinearLayout>
-
-		        <LinearLayout
-		            android:layout_width="match_parent"
-		            android:layout_height="wrap_content"
-		            android:layout_marginLeft="5dp"
-		            android:layout_marginRight="5dp" >
-
-		            <TextView
-		                android:id="@+id/TextView02"
-		                android:layout_width="110dp"
-		                android:layout_height="wrap_content"
-		                android:layout_gravity="center"
-		                android:text="Drink:"
-		                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-		            <Spinner
-		                android:id="@+id/order_deal_drink"
-		                android:layout_width="match_parent"
-		                android:layout_height="wrap_content"
-		                android:layout_weight="1"
-		                android:entries="@array/order_drinks" />
 		        </LinearLayout>
 
 		        <LinearLayout
@@ -321,14 +214,14 @@
 		            android:gravity="center|top" >
 
 		            <ImageButton
-		                android:id="@+id/order_deal_cancel"
+		                android:id="@+id/pizza_selection_cancel"
 		                android:layout_width="wrap_content"
 		                android:layout_height="wrap_content"
 		                android:background="@null"
 		                android:src="@drawable/bt_reset" />
 
 		            <ImageButton
-		                android:id="@+id/order_deal_done"
+		                android:id="@+id/pizza_selection_done"
 		                android:layout_width="wrap_content"
 		                android:layout_height="wrap_content"
 		                android:layout_marginLeft="20dp"

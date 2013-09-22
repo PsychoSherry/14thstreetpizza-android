@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -97,6 +98,10 @@ public class OrderActivity extends Activity {
     }
     
     public static class OrderOptions {
+    	static boolean dual;
+    	static String pizzaname;
+    	static String pizzastyle;
+    	static int pizzaimg;
         
     	public static void AddOrder(String title, String description, Integer image, Integer price){
     		OrderValues.Title.add(title);
@@ -110,7 +115,7 @@ public class OrderActivity extends Activity {
     		final LayoutInflater factory = LayoutInflater.from(context);
             View view = factory.inflate(R.layout.order_add_deal, null);
             
-            ImageButton btn_cancel = (ImageButton) view.findViewById (R.id.order_pizza_select_cancel);
+            ImageButton btn_cancel = (ImageButton) view.findViewById (R.id.order_deal_cancel);
             ImageButton btn_done   = (ImageButton) view.findViewById (R.id.order_deal_done);
 
             final Spinner deal     = (Spinner) view.findViewById (R.id.order_deal_name);
@@ -152,8 +157,13 @@ public class OrderActivity extends Activity {
     	public static void NewPizza(final Context context) {
     		final LayoutInflater factory = LayoutInflater.from(context);
             View pizzaselectview = factory.inflate(R.layout.order_add_pizza, null);
-            
-            ImageButton btn_cancel = (ImageButton) pizzaselectview.findViewById (R.id.order_pizza_select_cancel);
+
+            ImageButton btn_cancel    = (ImageButton) pizzaselectview.findViewById (R.id.pizza_select_cancel);
+            ImageButton btn_slice     = (ImageButton) pizzaselectview.findViewById (R.id.pizza_select_slice);
+            ImageButton btn_half      = (ImageButton) pizzaselectview.findViewById (R.id.pizza_select_half);
+            ImageButton btn_halfsplit = (ImageButton) pizzaselectview.findViewById (R.id.pizza_select_halfsplit);
+            ImageButton btn_halfhalf  = (ImageButton) pizzaselectview.findViewById (R.id.pizza_select_halfhalf);
+            ImageButton btn_full      = (ImageButton) pizzaselectview.findViewById (R.id.pizza_select_full);
           
             final AlertDialog alertview = new AlertDialog.Builder(context)
       	  		.setView(pizzaselectview)
@@ -166,8 +176,108 @@ public class OrderActivity extends Activity {
 					alertview.dismiss();
 				}
             });
+            btn_slice.setOnClickListener(new OnClickListener(){
+				@Override
+				public void onClick(View arg0) {
+					dual = false;
+					pizzastyle = "Slice";
+					pizzaimg = R.drawable.pizza_slice;
+					alertview.dismiss();
+					NewPizza_Options(context);
+				}
+            });
+            btn_half.setOnClickListener(new OnClickListener(){
+				@Override
+				public void onClick(View arg0) {
+					dual = false;
+					pizzastyle = "Half";
+					pizzaimg = R.drawable.pizza_half;
+					alertview.dismiss();
+					NewPizza_Options(context);
+				}
+            });
+            btn_halfsplit.setOnClickListener(new OnClickListener(){
+				@Override
+				public void onClick(View arg0) {
+					dual = true;
+					pizzastyle = "Split the Half";
+					pizzaimg = R.drawable.pizza_split_half;
+					alertview.dismiss();
+					NewPizza_Options(context);
+				}
+            });
+            btn_halfhalf.setOnClickListener(new OnClickListener(){
+				@Override
+				public void onClick(View arg0) {
+					dual = true;
+					pizzastyle = "Half and Half";
+					pizzaimg = R.drawable.pizza_half_half;
+					alertview.dismiss();
+					NewPizza_Options(context);
+				}
+            });
+            btn_full.setOnClickListener(new OnClickListener(){
+				@Override
+				public void onClick(View arg0) {
+					dual = false;
+					pizzastyle = "Full";
+					pizzaimg = R.drawable.pizza_full;
+					alertview.dismiss();
+					NewPizza_Options(context);
+				}
+            });
       	  
             alertview.show();    		
+    	}
+    	
+    	public static void NewPizza_Options(final Context context) {
+    		if (dual){
+    			
+    		} else {
+        		final LayoutInflater factory = LayoutInflater.from(context);
+                View view = factory.inflate(R.layout.order_pizza_selection_1, null);
+                
+                ImageView pizza_img = (ImageView) view.findViewById (R.id.pizza_selection_img);
+                TextView  pizza_tit = (TextView)  view.findViewById (R.id.pizza_selection_title);
+                
+                ImageButton btn_cancel = (ImageButton) view.findViewById (R.id.pizza_selection_cancel);
+                ImageButton btn_done   = (ImageButton) view.findViewById (R.id.pizza_selection_done);
+
+                final Spinner sauce    = (Spinner) view.findViewById (R.id.pizza_selection_sauce);
+                final Spinner flavor   = (Spinner) view.findViewById (R.id.pizza_selection_flavor);
+
+                pizza_tit.setText(pizzastyle);
+                pizza_img.setBackgroundResource(pizzaimg);
+                
+                final AlertDialog alertview = new AlertDialog.Builder(context)
+          	  		.setView(view)
+                	.setCancelable(false)
+                	.create();
+
+                btn_cancel.setOnClickListener(new OnClickListener(){
+    				@Override
+    				public void onClick(View arg0) {
+    					alertview.dismiss();
+    				}
+                });
+                
+                btn_done.setOnClickListener(new OnClickListener(){
+    				@Override
+    				public void onClick(View arg0) {
+    					AddOrder(
+    						"Pizza: " + pizzastyle,
+    						flavor.getSelectedItem().toString() + ", " + sauce.getSelectedItem().toString(),
+    						pizzaimg,
+    						GetPizzaPrice(pizzastyle)
+    					);
+    					
+    					alertview.dismiss();
+    					RefreshOrderList(context);
+    				}
+                });
+          	  
+                alertview.show(); 
+    		}
     	}
     	
     	
@@ -181,6 +291,21 @@ public class OrderActivity extends Activity {
     			return 349;
     		else if (dealname.equals("Midnight Deal 2"))
     			return 1099;
+    		
+    		return 0;
+    	}
+    	
+    	public static Integer GetPizzaPrice(String pizzaname) {
+    		if (pizzaname.equals("Slice"))
+    			return 299;
+    		else if (pizzaname.equals("Half"))
+    			return 999;
+    		else if (pizzaname.equals("Split the Half"))
+    			return 999;
+    		else if (pizzaname.equals("Half and Half"))
+    			return 1799;
+    		else if (pizzaname.equals("Full"))
+    			return 1799;
     		
     		return 0;
     	}

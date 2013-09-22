@@ -20,7 +20,6 @@
 	       android:textAlignment="center" >
 
 		    <ImageView
-		        android:id="@+id/imageView1"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:layout_gravity="center"
@@ -31,7 +30,6 @@
 		        android:src="@drawable/bt_createpizza" />
 		
 		    <TextView
-		        android:id="@+id/textView2"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:layout_marginBottom="10dp"
@@ -59,17 +57,17 @@
 			            android:gravity="center"
 			            android:orientation="vertical" >
 
-			            <ImageView
-			                android:id="@+id/imageView2"
+			            <ImageButton
+			                android:id="@+id/pizza_select_slice"
 			                android:layout_width="wrap_content"
 			                android:layout_height="100dp"
 			                android:layout_marginRight="2dp"
 			                android:layout_weight="1"
+			                android:background="@null"
 			                android:padding="10dp"
 			                android:src="@drawable/pizza_slice" />
 
 			            <TextView
-			                android:id="@+id/textView1"
 			                android:layout_width="wrap_content"
 			                android:layout_height="wrap_content"
 			                android:layout_weight="1"
@@ -84,17 +82,17 @@
 			            android:gravity="center"
 			            android:orientation="vertical" >
 
-			            <ImageView
-			                android:id="@+id/ImageView03"
+			            <ImageButton
+			                android:id="@+id/pizza_select_half"
 			                android:layout_width="wrap_content"
 			                android:layout_height="100dp"
 			                android:layout_marginRight="2dp"
 			                android:layout_weight="1"
+			                android:background="@null"
 			                android:padding="10dp"
 			                android:src="@drawable/pizza_half" />
 
 			            <TextView
-			                android:id="@+id/TextView01"
 			                android:layout_width="wrap_content"
 			                android:layout_height="wrap_content"
 			                android:layout_weight="1"
@@ -109,17 +107,17 @@
 			            android:gravity="center"
 			            android:orientation="vertical" >
 
-			            <ImageView
-			                android:id="@+id/ImageView05"
+			            <ImageButton
+			                android:id="@+id/pizza_select_halfsplit"
 			                android:layout_width="wrap_content"
 			                android:layout_height="100dp"
 			                android:layout_marginRight="2dp"
 			                android:layout_weight="1"
+			                android:background="@null"
 			                android:padding="10dp"
 			                android:src="@drawable/pizza_split_half" />
 
 			            <TextView
-			                android:id="@+id/TextView02"
 			                android:layout_width="wrap_content"
 			                android:layout_height="wrap_content"
 			                android:layout_weight="1"
@@ -141,17 +139,17 @@
 			            android:gravity="center"
 			            android:orientation="vertical" >
 
-			            <ImageView
-			                android:id="@+id/ImageView01"
+			            <ImageButton
+			                android:id="@+id/pizza_select_full"
 			                android:layout_width="wrap_content"
 			                android:layout_height="100dp"
 			                android:layout_marginRight="2dp"
 			                android:layout_weight="1"
+			                android:background="@null"
 			                android:padding="10dp"
 			                android:src="@drawable/pizza_full" />
 
 			            <TextView
-			                android:id="@+id/TextView03"
 			                android:layout_width="wrap_content"
 			                android:layout_height="wrap_content"
 			                android:layout_weight="1"
@@ -165,17 +163,17 @@
 			            android:gravity="center"
 			            android:orientation="vertical" >
 
-			            <ImageView
-			                android:id="@+id/ImageView02"
+			            <ImageButton
+			                android:id="@+id/pizza_select_halfhalf"
 			                android:layout_width="wrap_content"
 			                android:layout_height="100dp"
 			                android:layout_marginRight="2dp"
 			                android:layout_weight="1"
+			                android:background="@null"
 			                android:padding="10dp"
 			                android:src="@drawable/pizza_half_half" />
 
 			            <TextView
-			                android:id="@+id/TextView05"
 			                android:layout_width="wrap_content"
 			                android:layout_height="wrap_content"
 			                android:layout_weight="1"
@@ -185,9 +183,10 @@
 			    </LinearLayout>
 
 			    <ImageButton
-			        android:id="@+id/order_pizza_select_cancel"
+			        android:id="@+id/pizza_select_cancel"
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
+			        android:layout_marginBottom="20dp"
 			        android:layout_weight="1"
 			        android:background="@null"
 			        android:src="@drawable/bt_reset" />
