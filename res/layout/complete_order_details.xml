@@ -1,0 +1,140 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:textAlignment="center" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textAlignment="center" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:padding="5dp"
+                android:src="@drawable/bt_completeorder" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:text="Enter your Details:" />
+
+            <EditText
+                android:id="@+id/details_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Name"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:nextFocusDown="@+id/details_number"
+                android:nextFocusForward="@+id/details_number" >
+
+                <requestFocus />
+            </EditText>
+
+            <EditText
+                android:id="@+id/details_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Phone Number"
+                android:imeOptions="actionNext"
+                android:inputType="phone"
+                android:nextFocusDown="@+id/details_address"
+                android:nextFocusForward="@+id/details_address" />
+
+            <EditText
+                android:id="@+id/details_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Address"
+                android:imeOptions="actionNext"
+                android:inputType="textMultiLine"
+                android:nextFocusDown="@+id/details_area"
+                android:nextFocusForward="@+id/details_area" />
+
+            <EditText
+                android:id="@+id/details_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Delivery Area"
+                android:imeOptions="actionNext"
+                android:inputType="textMultiLine"
+                android:nextFocusDown="@+id/details_landmark"
+                android:nextFocusForward="@+id/details_landmark" />
+
+            <EditText
+                android:id="@+id/details_landmark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Nearest Landmark"
+                android:imeOptions="actionNext"
+                android:inputType="textMultiLine"
+                android:nextFocusDown="@+id/details_requirements"
+                android:nextFocusForward="@+id/details_requirements" />
+
+            <EditText
+                android:id="@+id/details_requirements"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Extra Requirements"
+                android:imeOptions="actionDone"
+                android:inputType="textMultiLine" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center|top" >
+
+                <ImageButton
+                    android:id="@+id/details_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:background="@null"
+                    android:src="@drawable/bt_reset" />
+
+                <ImageButton
+                    android:id="@+id/details_submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:background="@null"
+                    android:src="@drawable/submitbutton" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

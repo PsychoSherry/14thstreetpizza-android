@@ -72,6 +72,7 @@ public class ContactActivity extends Activity {
 			}
 			protected void onPostExecute(Void unused){
 					pdialog.dismiss();
+					finish();
 			}
 		}.execute();
     }

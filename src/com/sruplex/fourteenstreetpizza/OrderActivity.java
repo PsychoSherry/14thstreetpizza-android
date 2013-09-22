@@ -9,7 +9,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -416,15 +418,70 @@ public class OrderActivity extends Activity {
             btn_done.setOnClickListener(new OnClickListener(){
 				@Override
 				public void onClick(View arg0) {
-					
-					mapalertview.dismiss();
+					if (addmarker != null){
+						mapalertview.dismiss();
+						CompleteOrder_Details(context);
+					}
+				}
+            });
+         
+            mapalertview.show();
+    	}
+    	
+    	public static void CompleteOrder_Details(final Context context){
+    		final LayoutInflater factory = LayoutInflater.from(context);
+            View view = factory.inflate(R.layout.complete_order_details, null);
+            
+            ImageButton btn_cancel = (ImageButton) view.findViewById (R.id.details_cancel);
+            ImageButton btn_done   = (ImageButton) view.findViewById (R.id.details_submit);
+          
+            final AlertDialog alertview = new AlertDialog.Builder(context)
+      	  		.setView(view)
+            	.setCancelable(false)
+            	.create();
+
+            btn_cancel.setOnClickListener(new OnClickListener(){
+				@Override
+				public void onClick(View arg0) {
+					alertview.dismiss();
 				}
             });
             
-
-        	  
-            mapalertview.show();
+            btn_done.setOnClickListener(new OnClickListener(){
+				@Override
+				public void onClick(View arg0) {
+					alertview.dismiss();
+					
+			    	new AsyncTask<Void, Void, Void>() {
+			    		final LayoutInflater factory = LayoutInflater.from(context);
+			            private AlertDialog pdialog;
+						@Override
+							protected Void doInBackground(Void... unused) {
+							SystemClock.sleep(2000);
+							return null;
+						}
+						protected void onPreExecute(){
+			                View pview = factory.inflate(R.layout.dialog_loader, null);
+			                pdialog = new AlertDialog.Builder(context)
+			        	  	  .setView(pview)
+			                  .setCancelable(false)
+			                  .create();
+			                pdialog.show();
+			                pdialog.getWindow().setLayout(350, 110);
+							
+						}
+						protected void onPostExecute(Void unused){
+								pdialog.dismiss();
+								Activity thisactivity = (Activity) context;
+								thisactivity.finish();
+						}
+					}.execute();
+				}
+            });
+      	  
+            alertview.show();    		
     	}
+    	
     	
     	
     	// Sastay Methods
