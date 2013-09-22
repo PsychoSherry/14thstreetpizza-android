@@ -51,6 +51,8 @@ public class RowAdapter extends ArrayAdapter<String>{
 			}
 		});
 		
+		row_qty.setSelection(Integer.valueOf(OrderValues.Quantity.get(position)) - 1);
+		
 		row_qty.setOnItemSelectedListener(new OnItemSelectedListener(){
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View arg1, int selection, long arg3) {
