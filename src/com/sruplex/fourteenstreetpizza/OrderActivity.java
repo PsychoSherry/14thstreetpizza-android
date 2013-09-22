@@ -7,8 +7,11 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,11 +23,31 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
+
 
 public class OrderActivity extends Activity {
 	final static int BASEHEIGHT = 100;
 	static ListView orderlist = null;
 	static TextView totalcost = null;
+	
+
+	private static LocationManager locMan;
+    private static MapFragment mapFragment;
+	private static Marker userMarker;
+	private static GoogleMap theMap;
+	private static LatLng lastLatLng;
+	
+    private static int iconUser;
+    
+	public  static Marker addmarker;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -357,6 +380,30 @@ public class OrderActivity extends Activity {
 	            mapalertfucker = mapalertbuilder.create();
             }
             
+            Activity fragactivity = (Activity) context;
+            mapFragment = ((MapFragment)fragactivity.getFragmentManager().findFragmentById(R.id.the_map));
+            theMap = mapFragment.getMap();/*
+            theMap.getUiSettings().setCompassEnabled(false);
+            theMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);*/
+            
+        	theMap.setOnMapClickListener(new GoogleMap.OnMapClickListener(){
+    			@Override
+    			public void onMapClick(LatLng point) {
+    			   	if ((addmarker != null))
+    		    		addmarker.remove();
+    			   	
+    			   	OrderValues.Location_Selected = point;
+    				addmarker = theMap.addMarker(new MarkerOptions()
+    					.position(point)
+    					.title("Deliver Here")
+    					.snippet("Drag to Re-Position")
+    				);
+    				addmarker.setDraggable(true);
+    				addmarker.showInfoWindow();
+    				AnimateCameraTo(point, 500);
+    			}
+        	});
+            
             final AlertDialog mapalertview = mapalertfucker;
             
             btn_cancel.setOnClickListener(new OnClickListener(){
@@ -373,8 +420,10 @@ public class OrderActivity extends Activity {
 					mapalertview.dismiss();
 				}
             });
-      	  
-            mapalertview.show();    		
+            
+
+        	  
+            mapalertview.show();
     	}
     	
     	
@@ -406,6 +455,35 @@ public class OrderActivity extends Activity {
     		
     		return 0;
     	}
+    	
+        private static void updatePlaces(Context context) {
+        	if (userMarker!=null)
+        		userMarker.remove();
+        	
+            locMan = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+            Location lastLoc = locMan.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+            
+            if (lastLoc != null) {
+            	lastLatLng = new LatLng(lastLoc.getLatitude(), lastLoc.getLongitude());
+            	Log.v("14SP", lastLoc.toString());
+            	Log.v("14SP", lastLatLng.toString());
+            
+    	        userMarker = theMap.addMarker(new MarkerOptions()
+    		        .position(lastLatLng)
+    		        .title("You are here")
+    		        .icon(BitmapDescriptorFactory.fromResource(iconUser))
+    		        .snippet("Your last recorded location"));
+    	        AnimateCameraTo(lastLatLng, 3000);
+            }
+        }
+        
+        private static void AnimateCameraTo(LatLng position, int speed){
+            CameraPosition cameraPosition = new CameraPosition.Builder()
+    	    	.target(position)
+    	    	.zoom(16)
+    	    	.build();
+            theMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition),speed,null);
+        }
     	
     }
 

@@ -2,6 +2,8 @@ package com.sruplex.fourteenstreetpizza;
 
 import java.util.ArrayList;
 
+import com.google.android.gms.maps.model.LatLng;
+
 public class OrderValues {
 
 	public static ArrayList<String> Title;
@@ -12,6 +14,7 @@ public class OrderValues {
 	public static ArrayList<Integer> Image;
 	
 	public static Integer GrandTotal;
+	public static LatLng  Location_Selected;
 	
 	
 //	// Resources
