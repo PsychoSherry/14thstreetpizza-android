@@ -109,7 +109,7 @@ public class OrderActivity extends Activity {
 	}
 	
 	public void OrderAdd_Menu(View arg0){
-		
+		OrderOptions.ShowMenu(OrderActivity.this);
 	}
 	
 	public void OrderAdd_Deal(View arg0){
@@ -188,6 +188,79 @@ public class OrderActivity extends Activity {
             });
       	  
             alertview.show();    		
+    	}
+    	
+    	public static void ShowMenu(final Context context){
+    		final LayoutInflater factory = LayoutInflater.from(context);
+            View view = factory.inflate(R.layout.order_add_menu, null);
+
+            ImageButton btn_cancel = (ImageButton) view.findViewById (R.id.menu_cancel);
+            ImageButton showpizza  = (ImageButton) view.findViewById (R.id.menu_add_pizza);
+            ImageButton showdeals  = (ImageButton) view.findViewById (R.id.menu_add_deals);
+            ImageButton showsides  = (ImageButton) view.findViewById (R.id.menu_add_sidelines);
+            ImageButton showsweets = (ImageButton) view.findViewById (R.id.menu_add_sweets);
+            ImageButton showdrinks = (ImageButton) view.findViewById (R.id.menu_add_drinks);
+          
+            final AlertDialog alertview = new AlertDialog.Builder(context)
+      	  		.setView(view)
+            	.setCancelable(false)
+            	.create();
+
+            btn_cancel.setOnClickListener(new OnClickListener(){
+				public void onClick(View arg0) { alertview.dismiss(); }
+            });
+            showpizza.setOnClickListener(new OnClickListener(){
+				public void onClick(View arg0) { alertview.dismiss(); NewPizza(context); }
+            });
+            showdeals.setOnClickListener(new OnClickListener(){
+				public void onClick(View arg0) { alertview.dismiss(); NewDeal(context); }
+            });
+            showsides.setOnClickListener(new OnClickListener(){
+				public void onClick(View arg0) { alertview.dismiss(); }
+            });
+            showsweets.setOnClickListener(new OnClickListener(){
+				public void onClick(View arg0) { alertview.dismiss(); }
+            });
+            showdrinks.setOnClickListener(new OnClickListener(){
+				public void onClick(View arg0) { alertview.dismiss(); NewDrink(context); }
+            });
+      	  
+            alertview.show(); 
+    	}    	
+    	
+    	public static void NewDrink(final Context context){
+    		final LayoutInflater factory = LayoutInflater.from(context);
+            View view = factory.inflate(R.layout.menu_drinks, null);
+
+            final Spinner drink_selc = (Spinner)     view.findViewById (R.id.drink_selector);
+            ImageButton   btn_cancel = (ImageButton) view.findViewById (R.id.drink_cancel);
+            ImageButton   btn_done   = (ImageButton) view.findViewById (R.id.drink_done);
+          
+            final AlertDialog alertview = new AlertDialog.Builder(context)
+      	  		.setView(view)
+            	.setCancelable(false)
+            	.create();
+
+            btn_cancel.setOnClickListener(new OnClickListener(){
+				public void onClick(View arg0) { alertview.dismiss(); }
+            });
+            
+            btn_done.setOnClickListener(new OnClickListener(){
+				@Override
+				public void onClick(View arg0) {
+					AddOrder(
+						"Drink: ",
+						drink_selc.getSelectedItem().toString(),
+						R.drawable.bt_drinks,
+						GetDrinkPrice(drink_selc.getSelectedItem().toString())
+					);
+					
+					alertview.dismiss();
+					RefreshOrderList(context);
+				}
+            });
+
+            alertview.show(); 
     	}
     	
     	public static void NewPizza(final Context context) {
@@ -486,29 +559,43 @@ public class OrderActivity extends Activity {
     	
     	// Sastay Methods
     	public static Integer GetDealPrice(String dealname) {
-    		if (dealname.equals("Slice Deal"))
-    			return 399;
-    		else if (dealname.equals("Double Slice Deal"))
-    			return 649;
-    		else if (dealname.equals("Midnight Deal 1"))
-    			return 349;
-    		else if (dealname.equals("Midnight Deal 2"))
-    			return 1099;
+    		if      (dealname.equals("Slice Deal"))				return 399;
+    		else if (dealname.equals("Double Slice Deal"))		return 649;
+    		else if (dealname.equals("Midnight Deal 1"))		return 349;
+    		else if (dealname.equals("Midnight Deal 2"))		return 1099;
     		
     		return 0;
     	}
     	
     	public static Integer GetPizzaPrice(String pizzaname) {
-    		if (pizzaname.equals("Slice"))
-    			return 299;
-    		else if (pizzaname.equals("Half"))
-    			return 999;
-    		else if (pizzaname.equals("Split the Half"))
-    			return 999;
-    		else if (pizzaname.equals("Half and Half"))
-    			return 1799;
-    		else if (pizzaname.equals("Full"))
-    			return 1799;
+    		if      (pizzaname.equals("Slice"))					return 299;
+    		else if (pizzaname.equals("Half"))					return 999;
+    		else if (pizzaname.equals("Split the Half"))		return 999;
+    		else if (pizzaname.equals("Half and Half"))			return 1799;
+    		else if (pizzaname.equals("Full"))					return 1799;
+    		
+    		return 0;
+    	}
+    	
+    	public static Integer GetDrinkPrice(String drinkname){
+    		if      (drinkname.equals("Apple Juice - Rs 60"))			return 60;
+    		else if (drinkname.equals("Coke 1.5L - Rs 100"))			return 100;
+    		else if (drinkname.equals("Coke 500ml - Rs 60"))			return 60;
+    		else if (drinkname.equals("Diet Coke 1.5L - Rs 100"))		return 100;
+    		else if (drinkname.equals("Diet Coke 500ml - Rs 65"))		return 65;
+    		else if (drinkname.equals("Fanta 1.5L - Rs 100"))			return 100;
+    		else if (drinkname.equals("Fanta 500ml - Rs 60"))			return 60;
+    		else if (drinkname.equals("Mango Juice - Rs 60"))			return 60;
+    		else if (drinkname.equals("Minute Maid Orange - Rs 60"))	return 60;
+    		else if (drinkname.equals("Minute Maid Tropical - Rs 60"))	return 60;
+    		else if (drinkname.equals("Orange Juice - Rs 60"))			return 60;
+    		else if (drinkname.equals("Peach Juice - Rs 60"))			return 60;
+    		else if (drinkname.equals("Pineapple Juice - Rs 60"))		return 60;
+    		else if (drinkname.equals("Red Bull - Rs 175"))				return 175;
+    		else if (drinkname.equals("Sprite 1.5L - Rs 100"))			return 100;
+    		else if (drinkname.equals("Sprite 500ml - Rs 60"))			return 60;
+    		else if (drinkname.equals("Sprite Zero 1.5L - Rs 100"))		return 100;
+    		else if (drinkname.equals("Water (500ml) - Rs 40"))			return 40;
     		
     		return 0;
     	}

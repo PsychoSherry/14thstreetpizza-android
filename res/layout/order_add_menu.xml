@@ -1,0 +1,98 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:textAlignment="center" >
+    
+    <ScrollView 
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content">
+	   
+	   <LinearLayout
+	       android:layout_width="fill_parent"
+	       android:layout_height="fill_parent"
+	       android:orientation="vertical"
+	       android:textAlignment="center" >
+
+	       <ImageView
+	           android:layout_width="140dp"
+	           android:layout_height="130dp"
+	           android:layout_gravity="center"
+	           android:layout_marginBottom="30dp"
+	           android:layout_marginTop="20dp"
+	           android:contentDescription=""
+	           android:src="@drawable/menu_large" />
+
+	       <ImageButton
+	           android:id="@+id/menu_add_pizza"
+	           android:layout_width="wrap_content"
+	           android:layout_height="50dp"
+	           android:layout_marginLeft="35dp"
+	           android:layout_marginRight="35dp"
+	           android:background="@null"
+	           android:onClick="OrderComplete"
+	           android:scaleType="centerInside"
+	           android:src="@drawable/bt_createpizza" />
+
+	       <ImageButton
+	           android:id="@+id/menu_add_sidelines"
+	           android:layout_width="wrap_content"
+	           android:layout_height="50dp"
+	           android:layout_marginLeft="35dp"
+	           android:layout_marginRight="35dp"
+	           android:background="@null"
+	           android:onClick="OrderComplete"
+	           android:scaleType="centerInside"
+	           android:src="@drawable/bt_sidelines" />
+
+	       <ImageButton
+	           android:id="@+id/menu_add_sweets"
+	           android:layout_width="wrap_content"
+	           android:layout_height="50dp"
+	           android:layout_marginLeft="35dp"
+	           android:layout_marginRight="35dp"
+	           android:background="@null"
+	           android:onClick="OrderComplete"
+	           android:scaleType="centerInside"
+	           android:src="@drawable/bt_sweet" />
+
+	       <ImageButton
+	           android:id="@+id/menu_add_drinks"
+	           android:layout_width="wrap_content"
+	           android:layout_height="50dp"
+	           android:layout_marginLeft="35dp"
+	           android:layout_marginRight="35dp"
+	           android:background="@null"
+	           android:onClick="OrderComplete"
+	           android:scaleType="centerInside"
+	           android:src="@drawable/bt_drinks" />
+
+	       <ImageButton
+	           android:id="@+id/menu_add_deals"
+	           android:layout_width="wrap_content"
+	           android:layout_height="50dp"
+	           android:layout_marginLeft="35dp"
+	           android:layout_marginRight="35dp"
+	           android:background="@null"
+	           android:onClick="OrderComplete"
+	           android:scaleType="centerInside"
+	           android:src="@drawable/bt_deals" />
+
+	       <ImageButton
+	           android:id="@+id/menu_cancel"
+	           android:layout_width="wrap_content"
+	           android:layout_height="45dp"
+	           android:layout_gravity="center"
+	           android:layout_marginBottom="20dp"
+	           android:layout_marginTop="25dp"
+	           android:layout_weight="1"
+	           android:background="@null"
+	           android:scaleType="centerInside"
+	           android:src="@drawable/bt_reset" />
+
+	   </LinearLayout>
+
+		</ScrollView>
+</LinearLayout>

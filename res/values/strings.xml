@@ -53,4 +53,25 @@
         <item>Sprite</item>
     </string-array>
     
+    <string-array name="menu_drinks">
+        <item>Apple Juice - Rs 60</item>
+			<item>Coke 1.5L - Rs 100</item>
+			<item>Coke 500ml - Rs 60</item>
+			<item>Diet Coke 1.5L - Rs 100</item>
+			<item>Diet Coke 500ml - Rs 65</item>
+			<item>Fanta 1.5L - Rs 100</item>
+			<item>Fanta 500ml - Rs 60</item>
+			<item>Mango Juice - Rs 60</item>
+			<item>Minute Maid Orange - Rs 60</item>
+			<item>Minute Maid Tropical - Rs 60</item>
+			<item>Orange Juice - Rs 60</item>
+			<item>Peach Juice - Rs 60</item>
+			<item>Pineapple Juice - Rs 60</item>
+			<item>Red Bull - Rs 175</item>
+			<item>Sprite 1.5L - Rs 100</item>
+			<item>Sprite 500ml - Rs 60</item>
+			<item>Sprite Zero 1.5L - Rs 100</item>
+			<item>Water (500ml) - Rs 40</item>
+    </string-array>
+    
 </resources>
