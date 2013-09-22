@@ -400,10 +400,15 @@ containing a value of this type.
         public static final int logo=0x7f02004d;
         public static final int menu_large=0x7f02004e;
         public static final int orderonline=0x7f02004f;
-        public static final int stripbar=0x7f020050;
-        public static final int submitbutton=0x7f020051;
-        public static final int title_deals=0x7f020052;
-        public static final int your_order=0x7f020053;
+        public static final int pizza_full=0x7f020050;
+        public static final int pizza_half=0x7f020051;
+        public static final int pizza_half_half=0x7f020052;
+        public static final int pizza_slice=0x7f020053;
+        public static final int pizza_split_half=0x7f020054;
+        public static final int stripbar=0x7f020055;
+        public static final int submitbutton=0x7f020056;
+        public static final int title_deals=0x7f020057;
+        public static final int your_order=0x7f020058;
     }
     public static final class id {
         public static final int CheckBox01=0x7f050044;
@@ -415,12 +420,14 @@ containing a value of this type.
         public static final int CheckBox08=0x7f05004a;
         public static final int ImageView01=0x7f050037;
         public static final int ImageView02=0x7f050038;
+        public static final int ImageView03=0x7f05004d;
+        public static final int ImageView05=0x7f05004e;
         public static final int TextView01=0x7f05003c;
         public static final int TextView02=0x7f050040;
         public static final int TextView03=0x7f050039;
         public static final int TextView04=0x7f05003e;
         public static final int TextView05=0x7f050042;
-        public static final int action_settings=0x7f050052;
+        public static final int action_settings=0x7f050054;
         public static final int button1=0x7f05000f;
         public static final int button_about=0x7f050019;
         public static final int button_contact=0x7f05001a;
@@ -463,19 +470,20 @@ containing a value of this type.
         public static final int order_bt_createpizza=0x7f050010;
         public static final int order_bt_deals=0x7f050011;
         public static final int order_bt_menu=0x7f050007;
-        public static final int order_deal_cancel=0x7f05004b;
         public static final int order_deal_done=0x7f05004c;
         public static final int order_deal_drink=0x7f050041;
         public static final int order_deal_flavor=0x7f05003d;
         public static final int order_deal_name=0x7f05003a;
         public static final int order_deal_sauce=0x7f05003b;
         public static final int order_deal_sideline=0x7f05003f;
-        public static final int order_now_qty=0x7f050050;
-        public static final int order_row_cancel=0x7f050051;
-        public static final int order_row_img=0x7f05004d;
-        public static final int order_row_info=0x7f05004f;
-        public static final int order_row_title=0x7f05004e;
+        public static final int order_now_qty=0x7f050052;
+        public static final int order_pizza_select_cancel=0x7f05004b;
+        public static final int order_row_cancel=0x7f050053;
+        public static final int order_row_img=0x7f05004f;
+        public static final int order_row_info=0x7f050051;
+        public static final int order_row_title=0x7f050050;
         public static final int orderlist=0x7f050014;
+        public static final int ordertotalcost=0x7f050016;
         public static final int picker_subtitle=0x7f05002f;
         public static final int progressBar1=0x7f05000e;
         public static final int satellite=0x7f050002;
@@ -485,7 +493,6 @@ containing a value of this type.
         public static final int textView1=0x7f050008;
         public static final int textView2=0x7f050013;
         public static final int textView3=0x7f050015;
-        public static final int textView4=0x7f050016;
         public static final int userimage=0x7f05001b;
         public static final int username=0x7f05001c;
         public static final int viewprogress=0x7f050033;
@@ -512,7 +519,8 @@ containing a value of this type.
         public static final int dialog_loader=0x7f030012;
         public static final int empty_list=0x7f030013;
         public static final int order_add_deal=0x7f030014;
-        public static final int row_order=0x7f030015;
+        public static final int order_add_pizza=0x7f030015;
+        public static final int row_order=0x7f030016;
     }
     public static final class menu {
         public static final int main=0x7f0a0000;

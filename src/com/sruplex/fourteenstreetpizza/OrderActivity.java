@@ -17,28 +17,24 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 
 public class OrderActivity extends Activity {
 	final static int BASEHEIGHT = 100;
 	static ListView orderlist = null;
+	static TextView totalcost = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_order);
 		
-		String sss[] = new String[3];
-		sss[0] = "Yo Bitch";
-		sss[1] = "sdfds";
-		sss[2] = "sdfsd";
-		
 		// Reset Order Values
 		OrderValues.Title       = new ArrayList<String>();
 		OrderValues.Description = new ArrayList<String>();
 		OrderValues.Quantity    = new ArrayList<Integer>();
 		OrderValues.Price       = new ArrayList<Integer>();
-		OrderValues.TotalCost   = new ArrayList<Integer>();
 		OrderValues.Image       = new ArrayList<Integer>();
 
 //		OrderValues.arr_deals     = getResources().getStringArray(R.array.order_deals);
@@ -49,6 +45,7 @@ public class OrderActivity extends Activity {
 		
 		// Initialize Objects
 		orderlist = (ListView) findViewById (R.id.orderlist);
+		totalcost = (TextView) findViewById (R.id.ordertotalcost);
 
 		
 		// Modify the ActionBar
@@ -64,10 +61,21 @@ public class OrderActivity extends Activity {
 	public static void RefreshOrderList(Context context) {
 		orderlist.setLayoutParams(new LayoutParams(orderlist.getLayoutParams().width, (BASEHEIGHT * OrderValues.Title.size()) + 30));
 		orderlist.setAdapter(new RowAdapter(context, OrderValues.Title.toArray(new String[OrderValues.Title.size()])));
+
+		Object temp_prc[] = OrderValues.Price.toArray();
+		Object temp_qty[] = OrderValues.Quantity.toArray();
+		
+		int costings = 0;
+		for(int i=0; i < temp_prc.length; i++)
+			costings += ((Integer) temp_prc[i]).intValue() * ((Integer) temp_qty[i]).intValue();
+		
+		OrderValues.GrandTotal = costings;
+		
+		totalcost.setText("Rs. " + String.valueOf(costings) + "/-");
 	}
 
 	public void OrderAdd_Pizza(View arg0){
-		
+		OrderOptions.NewPizza(OrderActivity.this);
 	}
 	
 	public void OrderAdd_Menu(View arg0){
@@ -94,6 +102,7 @@ public class OrderActivity extends Activity {
     		OrderValues.Title.add(title);
     		OrderValues.Image.add(image);
     		OrderValues.Price.add(price);
+    		OrderValues.Quantity.add(1);
     		OrderValues.Description.add(description);
     	}
     	
@@ -101,7 +110,7 @@ public class OrderActivity extends Activity {
     		final LayoutInflater factory = LayoutInflater.from(context);
             View view = factory.inflate(R.layout.order_add_deal, null);
             
-            ImageButton btn_cancel = (ImageButton) view.findViewById (R.id.order_deal_cancel);
+            ImageButton btn_cancel = (ImageButton) view.findViewById (R.id.order_pizza_select_cancel);
             ImageButton btn_done   = (ImageButton) view.findViewById (R.id.order_deal_done);
 
             final Spinner deal     = (Spinner) view.findViewById (R.id.order_deal_name);
@@ -134,6 +143,27 @@ public class OrderActivity extends Activity {
 					
 					alertview.dismiss();
 					RefreshOrderList(context);
+				}
+            });
+      	  
+            alertview.show();    		
+    	}
+    	
+    	public static void NewPizza(final Context context) {
+    		final LayoutInflater factory = LayoutInflater.from(context);
+            View pizzaselectview = factory.inflate(R.layout.order_add_pizza, null);
+            
+            ImageButton btn_cancel = (ImageButton) pizzaselectview.findViewById (R.id.order_pizza_select_cancel);
+          
+            final AlertDialog alertview = new AlertDialog.Builder(context)
+      	  		.setView(pizzaselectview)
+            	.setCancelable(false)
+            	.create();
+
+            btn_cancel.setOnClickListener(new OnClickListener(){
+				@Override
+				public void onClick(View arg0) {
+					alertview.dismiss();
 				}
             });
       	  

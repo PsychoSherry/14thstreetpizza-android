@@ -9,9 +9,9 @@ public class OrderValues {
 	
 	public static ArrayList<Integer> Quantity;
 	public static ArrayList<Integer> Price;
-	public static ArrayList<Integer> TotalCost;
-	
 	public static ArrayList<Integer> Image;
+	
+	public static Integer GrandTotal;
 	
 	
 //	// Resources
