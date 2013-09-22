@@ -232,7 +232,52 @@ public class OrderActivity extends Activity {
     	
     	public static void NewPizza_Options(final Context context) {
     		if (dual){
-    			
+        		final LayoutInflater factory = LayoutInflater.from(context);
+                View view = factory.inflate(R.layout.order_pizza_selection_2, null);
+                
+                ImageView pizza_img = (ImageView) view.findViewById (R.id.pizza_selection_dual_img);
+                TextView  pizza_tit = (TextView)  view.findViewById (R.id.pizza_selection_dual_title);
+                
+                ImageButton btn_cancel = (ImageButton) view.findViewById (R.id.pizza_selection_dual_cancel);
+                ImageButton btn_done   = (ImageButton) view.findViewById (R.id.pizza_selection_dual_done);
+
+                final Spinner sauce1  = (Spinner) view.findViewById (R.id.pizza_selection_sauce_1);
+                final Spinner sauce2  = (Spinner) view.findViewById (R.id.pizza_selection_sauce_2);
+                final Spinner flavor1 = (Spinner) view.findViewById (R.id.pizza_selection_flavor_1);
+                final Spinner flavor2 = (Spinner) view.findViewById (R.id.pizza_selection_flavor_2);
+
+                pizza_tit.setText(pizzastyle);
+                pizza_img.setBackgroundResource(pizzaimg);
+                
+                final AlertDialog alertview = new AlertDialog.Builder(context)
+          	  		.setView(view)
+                	.setCancelable(false)
+                	.create();
+
+                btn_cancel.setOnClickListener(new OnClickListener(){
+    				@Override
+    				public void onClick(View arg0) {
+    					alertview.dismiss();
+    				}
+                });
+                
+                btn_done.setOnClickListener(new OnClickListener(){
+    				@Override
+    				public void onClick(View arg0) {
+    					AddOrder(
+    						"Pizza: " + pizzastyle,
+    						flavor1.getSelectedItem().toString() + ", " + sauce1.getSelectedItem().toString() + "; " + 
+    								flavor2.getSelectedItem().toString() + ", " + sauce2.getSelectedItem().toString(),
+    						pizzaimg,
+    						GetPizzaPrice(pizzastyle)
+    					);
+    					
+    					alertview.dismiss();
+    					RefreshOrderList(context);
+    				}
+                });
+          	  
+                alertview.show(); 
     		} else {
         		final LayoutInflater factory = LayoutInflater.from(context);
                 View view = factory.inflate(R.layout.order_pizza_selection_1, null);

@@ -4,16 +4,16 @@
 This Mobile app is an entry in the 14th Street Pizza App Challenge by **GDG Karachi**.
 
 
-Disclaimer
-----------
-
-This app was built in a few days and is still under construction. Please ignore bugs, both Code-wise and Appeareance-wise (especially ones you see while opening the app in a Tablet). Given sufficient time, I can complete this app beautifully and perfectly. THIS IS A GUARANTEE. I've left the Web-Communication code, because a Web API was not provided. But if it is, this app can easily be made functional with it (or I can design you a better Web-End).
-
-
 Download Link
 -------------
 
 You can download the app's APK here: https://github.com/PsychoSherry/14thstreetpizza-android/raw/master/bin/14thStreetPizza.apk
+
+
+Disclaimer
+----------
+
+This app was built in a few days and is still under construction. Please ignore bugs, both Code-wise and Appeareance-wise (especially ones you see while opening the app in a Tablet). Given sufficient time, I can complete this app beautifully and perfectly. THIS IS A GUARANTEE. I've left the Web-Communication code, because a Web API was not provided. But if it is, this app can easily be made functional with it (or I can design you a better Web-End).
 
 
 App Compatibility

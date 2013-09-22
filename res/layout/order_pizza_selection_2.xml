@@ -1,0 +1,394 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:textAlignment="center" >
+    
+    <ScrollView 
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content">
+       
+	   <LinearLayout
+	       android:layout_width="fill_parent"
+	       android:layout_height="wrap_content"
+	       android:layout_gravity="center|top"
+	       android:gravity="center|top"
+	       android:orientation="vertical"
+	       android:padding="5dp"
+	       android:textAlignment="center" >
+
+		    <ImageView
+		        android:id="@+id/imageView1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center"
+		        android:layout_marginBottom="10dp"
+		        android:layout_marginLeft="20dp"
+		        android:layout_marginRight="20dp"
+		        android:layout_marginTop="20dp"
+		        android:src="@drawable/bt_createpizza" />
+
+		    <LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center"
+		        android:layout_marginBottom="10dp"
+		        android:gravity="center" >
+
+		        <ImageView
+		            android:id="@+id/pizza_selection_dual_img"
+		            android:layout_width="30dp"
+		            android:layout_height="30dp"
+		            android:layout_marginRight="15dp"
+		            android:src="@null" />
+
+		        <TextView
+		            android:id="@+id/pizza_selection_dual_title"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:gravity="center"
+		            android:text="Slice"
+		            android:textSize="20sp" />
+
+		    </LinearLayout>
+
+		    <LinearLayout
+		        android:layout_width="fill_parent"
+		        android:layout_height="fill_parent"
+		        android:gravity="center|top"
+		        android:orientation="vertical"
+		        android:paddingLeft="10dp"
+		        android:paddingRight="10dp"
+		        android:paddingTop="20dp"
+		        android:textAlignment="center" >
+
+		        <TextView
+		            android:id="@+id/textView2"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_gravity="left"
+		            android:layout_marginBottom="10dp"
+		            android:text="Select 1st Pizza:"
+		            android:textSize="25sp" />
+
+		        <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="5dp"
+		            android:layout_marginRight="5dp" >
+
+		            <TextView
+		                android:id="@+id/textView1"
+		                android:layout_width="110dp"
+		                android:layout_height="wrap_content"
+		                android:layout_gravity="center"
+		                android:text="Sauce:"
+		                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		            <Spinner
+		                android:id="@+id/pizza_selection_sauce_1"
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_weight="1"
+		                android:entries="@array/order_sauces" />
+		        </LinearLayout>
+
+		        <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="5dp"
+		            android:layout_marginRight="5dp" >
+
+		            <TextView
+		                android:id="@+id/TextView01"
+		                android:layout_width="110dp"
+		                android:layout_height="wrap_content"
+		                android:layout_gravity="center"
+		                android:text="Flavor:"
+		                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		            <Spinner
+		                android:id="@+id/pizza_selection_flavor_1"
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_weight="1"
+		                android:entries="@array/order_flavors" />
+		        </LinearLayout>
+
+		        <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="5dp"
+		            android:layout_marginRight="5dp"
+		            android:layout_weight="1" >
+
+		            <TextView
+		                android:id="@+id/TextView05"
+		                android:layout_width="110dp"
+		                android:layout_height="wrap_content"
+		                android:layout_gravity="center"
+		                android:text="Veggies:"
+		                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		            <GridLayout
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_weight="1"
+		                android:clipChildren="false"
+		                android:columnCount="1"
+		                android:layoutMode="opticalBounds"
+		                android:numColumns="auto_fit"
+		                android:orientation="horizontal"
+		                android:rowOrderPreserved="true"
+		                android:singleLine="false"
+		                android:stretchMode="columnWidth" >
+
+		                <CheckBox
+		                    android:id="@+id/checkBox1"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left"
+		                    android:checked="true"
+		                    android:text="Onions" />
+
+		                <CheckBox
+		                    android:id="@+id/CheckBox01"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left"
+		                    android:checked="true"
+		                    android:text="Tomatoes" />
+
+		                <CheckBox
+		                    android:id="@+id/CheckBox02"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left"
+		                    android:checked="true"
+		                    android:text="Capsicum" />
+
+		                <CheckBox
+		                    android:id="@+id/CheckBox03"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left"
+		                    android:checked="true"
+		                    android:text="Jalapenoes" />
+
+		                <CheckBox
+		                    android:id="@+id/CheckBox04"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left"
+		                    android:checked="true"
+		                    android:text="Mushrooms" />
+
+		                <CheckBox
+		                    android:id="@+id/CheckBox05"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left"
+		                    android:checked="true"
+		                    android:text="Red Chillies" />
+
+		                <CheckBox
+		                    android:id="@+id/CheckBox06"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left"
+		                    android:checked="true"
+		                    android:text="Green Chillies" />
+
+		                <CheckBox
+		                    android:id="@+id/CheckBox08"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left"
+		                    android:checked="true"
+		                    android:text="Olives" />
+		            </GridLayout>
+
+		        </LinearLayout>
+
+		        <TextView
+		            android:id="@+id/TextView06"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_gravity="left"
+		            android:layout_marginBottom="10dp"
+		            android:layout_marginTop="30dp"
+		            android:text="Select 2nd Pizza:"
+		            android:textSize="25sp" />
+
+		        <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="5dp"
+		            android:layout_marginRight="5dp" >
+
+		            <TextView
+		                android:id="@+id/TextView02"
+		                android:layout_width="110dp"
+		                android:layout_height="wrap_content"
+		                android:layout_gravity="center"
+		                android:text="Sauce:"
+		                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		            <Spinner
+		                android:id="@+id/pizza_selection_sauce_2"
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_weight="1"
+		                android:entries="@array/order_sauces" />
+		        </LinearLayout>
+
+		        <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="5dp"
+		            android:layout_marginRight="5dp" >
+
+		            <TextView
+		                android:id="@+id/TextView03"
+		                android:layout_width="110dp"
+		                android:layout_height="wrap_content"
+		                android:layout_gravity="center"
+		                android:text="Flavor:"
+		                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		            <Spinner
+		                android:id="@+id/pizza_selection_flavor_2"
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_weight="1"
+		                android:entries="@array/order_flavors" />
+		        </LinearLayout>
+
+		        <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="5dp"
+		            android:layout_marginRight="5dp"
+		            android:layout_weight="1" >
+
+		            <TextView
+		                android:id="@+id/TextView04"
+		                android:layout_width="110dp"
+		                android:layout_height="wrap_content"
+		                android:layout_gravity="center"
+		                android:text="Veggies:"
+		                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		            <GridLayout
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_weight="1"
+		                android:clipChildren="false"
+		                android:columnCount="1"
+		                android:layoutMode="opticalBounds"
+		                android:numColumns="auto_fit"
+		                android:orientation="horizontal"
+		                android:rowOrderPreserved="true"
+		                android:singleLine="false"
+		                android:stretchMode="columnWidth" >
+
+		                <CheckBox
+		                    android:id="@+id/CheckBox14"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left"
+		                    android:checked="true"
+		                    android:text="Onions" />
+
+		                <CheckBox
+		                    android:id="@+id/CheckBox12"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left"
+		                    android:checked="true"
+		                    android:text="Tomatoes" />
+
+		                <CheckBox
+		                    android:id="@+id/CheckBox13"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left"
+		                    android:checked="true"
+		                    android:text="Capsicum" />
+
+		                <CheckBox
+		                    android:id="@+id/CheckBox15"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left"
+		                    android:checked="true"
+		                    android:text="Jalapenoes" />
+
+		                <CheckBox
+		                    android:id="@+id/CheckBox10"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left"
+		                    android:checked="true"
+		                    android:text="Mushrooms" />
+
+		                <CheckBox
+		                    android:id="@+id/CheckBox09"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left"
+		                    android:checked="true"
+		                    android:text="Red Chillies" />
+
+		                <CheckBox
+		                    android:id="@+id/CheckBox11"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left"
+		                    android:checked="true"
+		                    android:text="Green Chillies" />
+
+		                <CheckBox
+		                    android:id="@+id/CheckBox07"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left"
+		                    android:checked="true"
+		                    android:text="Olives" />
+		            </GridLayout>
+		        </LinearLayout>
+
+		        <LinearLayout
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_marginBottom="20dp"
+		            android:layout_marginLeft="5dp"
+		            android:layout_marginRight="5dp"
+		            android:layout_marginTop="20dp"
+		            android:layout_weight="1"
+		            android:gravity="center|top" >
+
+		            <ImageButton
+		                android:id="@+id/pizza_selection_dual_cancel"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:background="@null"
+		                android:src="@drawable/bt_reset" />
+
+		            <ImageButton
+		                android:id="@+id/pizza_selection_dual_done"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_marginLeft="20dp"
+		                android:background="@null"
+		                android:src="@drawable/bt_next" />
+		        </LinearLayout>
+
+		    </LinearLayout>
+
+	    </LinearLayout>
+	</ScrollView>
+
+</LinearLayout>
