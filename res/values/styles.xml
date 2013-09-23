@@ -13,8 +13,12 @@
     </style>
 
     <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    <style name="PizzaTheme" parent="android:Theme.Light">
+    	<item name="android:actionBarStyle">@style/Psycho.BlueWhite.ActionBar</item>
+	</style>
+    
+    <style name="Psycho.BlueWhite.ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">#0099cc</item>
     </style>
 
 </resources>

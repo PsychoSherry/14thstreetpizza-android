@@ -36,7 +36,9 @@ public class ContactActivity extends Activity {
         if (myapi >= 11) { 
             ActionBar actionBar = getActionBar();
                 actionBar.setDisplayHomeAsUpEnabled(true);
-                actionBar.setDisplayShowHomeEnabled(false);
+                actionBar.setDisplayShowHomeEnabled(true);
+                actionBar.setDisplayUseLogoEnabled(true);
+                actionBar.setDisplayShowTitleEnabled(false);
         }        
         
 	}

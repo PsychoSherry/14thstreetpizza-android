@@ -421,15 +421,15 @@ containing a value of this type.
         public static final int CheckBox04=0x7f05005b;
         public static final int CheckBox05=0x7f05005c;
         public static final int CheckBox06=0x7f05005d;
-        public static final int CheckBox07=0x7f050081;
         public static final int CheckBox08=0x7f05005e;
-        public static final int CheckBox09=0x7f05007f;
-        public static final int CheckBox10=0x7f05007e;
-        public static final int CheckBox11=0x7f050080;
-        public static final int CheckBox12=0x7f05007b;
-        public static final int CheckBox13=0x7f05007c;
-        public static final int CheckBox14=0x7f05007a;
-        public static final int CheckBox15=0x7f05007d;
+        public static final int CheckBox16=0x7f050082;
+        public static final int CheckBox17=0x7f050080;
+        public static final int CheckBox18=0x7f05007f;
+        public static final int CheckBox19=0x7f050081;
+        public static final int CheckBox20=0x7f05007c;
+        public static final int CheckBox21=0x7f05007d;
+        public static final int CheckBox22=0x7f05007b;
+        public static final int CheckBox23=0x7f05007e;
         public static final int ImageView01=0x7f05004b;
         public static final int ImageView02=0x7f05004c;
         public static final int TextView01=0x7f050050;
@@ -438,7 +438,8 @@ containing a value of this type.
         public static final int TextView04=0x7f050052;
         public static final int TextView05=0x7f050056;
         public static final int TextView06=0x7f050077;
-        public static final int action_settings=0x7f050089;
+        public static final int TextView07=0x7f05007a;
+        public static final int action_settings=0x7f05008a;
         public static final int button1=0x7f05000f;
         public static final int button_about=0x7f050019;
         public static final int button_contact=0x7f05001a;
@@ -507,11 +508,11 @@ containing a value of this type.
         public static final int order_deal_name=0x7f05004e;
         public static final int order_deal_sauce=0x7f05004f;
         public static final int order_deal_sideline=0x7f050053;
-        public static final int order_row_cancel=0x7f050088;
-        public static final int order_row_img=0x7f050084;
-        public static final int order_row_info=0x7f050086;
-        public static final int order_row_qty=0x7f050087;
-        public static final int order_row_title=0x7f050085;
+        public static final int order_row_cancel=0x7f050089;
+        public static final int order_row_img=0x7f050085;
+        public static final int order_row_info=0x7f050087;
+        public static final int order_row_qty=0x7f050088;
+        public static final int order_row_title=0x7f050086;
         public static final int orderlist=0x7f050014;
         public static final int ordertotalcost=0x7f050016;
         public static final int picker_subtitle=0x7f05002f;
@@ -523,8 +524,8 @@ containing a value of this type.
         public static final int pizza_select_slice=0x7f050067;
         public static final int pizza_selection_cancel=0x7f050071;
         public static final int pizza_selection_done=0x7f050072;
-        public static final int pizza_selection_dual_cancel=0x7f050082;
-        public static final int pizza_selection_dual_done=0x7f050083;
+        public static final int pizza_selection_dual_cancel=0x7f050083;
+        public static final int pizza_selection_dual_done=0x7f050084;
         public static final int pizza_selection_dual_img=0x7f050073;
         public static final int pizza_selection_dual_title=0x7f050074;
         public static final int pizza_selection_flavor=0x7f050070;
@@ -725,9 +726,9 @@ containing a value of this type.
          */
         public static final int AppBaseTheme=0x7f080002;
         /**  Application theme. 
- All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f080003;
+        public static final int PizzaTheme=0x7f080003;
+        public static final int Psycho_BlueWhite_ActionBar=0x7f080004;
         public static final int com_facebook_loginview_default_style=0x7f080000;
         public static final int com_facebook_loginview_silver_style=0x7f080001;
     }

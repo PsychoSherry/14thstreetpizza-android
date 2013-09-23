@@ -122,22 +122,25 @@
 		            android:layout_height="wrap_content"
 		            android:layout_marginLeft="5dp"
 		            android:layout_marginRight="5dp"
-		            android:layout_weight="1" >
+		            android:layout_marginTop="5dp"
+		            android:layout_weight="1"
+		            android:orientation="vertical" >
 
 		            <TextView
 		                android:id="@+id/TextView05"
 		                android:layout_width="110dp"
 		                android:layout_height="wrap_content"
-		                android:layout_gravity="center"
+		                android:layout_gravity="left"
 		                android:text="Veggies:"
 		                android:textAppearance="?android:attr/textAppearanceMedium" />
 
 		            <GridLayout
 		                android:layout_width="match_parent"
 		                android:layout_height="wrap_content"
+		                android:layout_marginTop="5dp"
 		                android:layout_weight="1"
 		                android:clipChildren="false"
-		                android:columnCount="1"
+		                android:columnCount="2"
 		                android:layoutMode="opticalBounds"
 		                android:numColumns="auto_fit"
 		                android:orientation="horizontal"
@@ -209,7 +212,6 @@
 		                    android:checked="true"
 		                    android:text="Olives" />
 		            </GridLayout>
-
 		        </LinearLayout>
 
 		        <TextView
@@ -271,22 +273,25 @@
 		            android:layout_height="wrap_content"
 		            android:layout_marginLeft="5dp"
 		            android:layout_marginRight="5dp"
-		            android:layout_weight="1" >
+		            android:layout_marginTop="5dp"
+		            android:layout_weight="1"
+		            android:orientation="vertical" >
 
 		            <TextView
-		                android:id="@+id/TextView04"
+		                android:id="@+id/TextView07"
 		                android:layout_width="110dp"
 		                android:layout_height="wrap_content"
-		                android:layout_gravity="center"
+		                android:layout_gravity="left"
 		                android:text="Veggies:"
 		                android:textAppearance="?android:attr/textAppearanceMedium" />
 
 		            <GridLayout
 		                android:layout_width="match_parent"
 		                android:layout_height="wrap_content"
+		                android:layout_marginTop="5dp"
 		                android:layout_weight="1"
 		                android:clipChildren="false"
-		                android:columnCount="1"
+		                android:columnCount="2"
 		                android:layoutMode="opticalBounds"
 		                android:numColumns="auto_fit"
 		                android:orientation="horizontal"
@@ -295,7 +300,7 @@
 		                android:stretchMode="columnWidth" >
 
 		                <CheckBox
-		                    android:id="@+id/CheckBox14"
+		                    android:id="@+id/CheckBox22"
 		                    android:layout_width="wrap_content"
 		                    android:layout_height="wrap_content"
 		                    android:layout_gravity="left"
@@ -303,7 +308,7 @@
 		                    android:text="Onions" />
 
 		                <CheckBox
-		                    android:id="@+id/CheckBox12"
+		                    android:id="@+id/CheckBox20"
 		                    android:layout_width="wrap_content"
 		                    android:layout_height="wrap_content"
 		                    android:layout_gravity="left"
@@ -311,7 +316,7 @@
 		                    android:text="Tomatoes" />
 
 		                <CheckBox
-		                    android:id="@+id/CheckBox13"
+		                    android:id="@+id/CheckBox21"
 		                    android:layout_width="wrap_content"
 		                    android:layout_height="wrap_content"
 		                    android:layout_gravity="left"
@@ -319,7 +324,7 @@
 		                    android:text="Capsicum" />
 
 		                <CheckBox
-		                    android:id="@+id/CheckBox15"
+		                    android:id="@+id/CheckBox23"
 		                    android:layout_width="wrap_content"
 		                    android:layout_height="wrap_content"
 		                    android:layout_gravity="left"
@@ -327,7 +332,7 @@
 		                    android:text="Jalapenoes" />
 
 		                <CheckBox
-		                    android:id="@+id/CheckBox10"
+		                    android:id="@+id/CheckBox18"
 		                    android:layout_width="wrap_content"
 		                    android:layout_height="wrap_content"
 		                    android:layout_gravity="left"
@@ -335,7 +340,7 @@
 		                    android:text="Mushrooms" />
 
 		                <CheckBox
-		                    android:id="@+id/CheckBox09"
+		                    android:id="@+id/CheckBox17"
 		                    android:layout_width="wrap_content"
 		                    android:layout_height="wrap_content"
 		                    android:layout_gravity="left"
@@ -343,7 +348,7 @@
 		                    android:text="Red Chillies" />
 
 		                <CheckBox
-		                    android:id="@+id/CheckBox11"
+		                    android:id="@+id/CheckBox19"
 		                    android:layout_width="wrap_content"
 		                    android:layout_height="wrap_content"
 		                    android:layout_gravity="left"
@@ -351,7 +356,7 @@
 		                    android:text="Green Chillies" />
 
 		                <CheckBox
-		                    android:id="@+id/CheckBox07"
+		                    android:id="@+id/CheckBox16"
 		                    android:layout_width="wrap_content"
 		                    android:layout_height="wrap_content"
 		                    android:layout_gravity="left"

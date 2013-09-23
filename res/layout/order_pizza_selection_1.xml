@@ -113,22 +113,25 @@
 		            android:layout_height="wrap_content"
 		            android:layout_marginLeft="5dp"
 		            android:layout_marginRight="5dp"
-		            android:layout_weight="1" >
+		            android:layout_marginTop="5dp"
+		            android:layout_weight="1"
+		            android:orientation="vertical" >
 
 		            <TextView
 		                android:id="@+id/TextView05"
 		                android:layout_width="110dp"
 		                android:layout_height="wrap_content"
-		                android:layout_gravity="center"
+		                android:layout_gravity="left"
 		                android:text="Veggies:"
 		                android:textAppearance="?android:attr/textAppearanceMedium" />
 
 		            <GridLayout
 		                android:layout_width="match_parent"
 		                android:layout_height="wrap_content"
+		                android:layout_marginTop="5dp"
 		                android:layout_weight="1"
 		                android:clipChildren="false"
-		                android:columnCount="1"
+		                android:columnCount="2"
 		                android:layoutMode="opticalBounds"
 		                android:numColumns="auto_fit"
 		                android:orientation="horizontal"
