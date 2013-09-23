@@ -13,12 +13,14 @@
     </style>
 
     <!-- Application theme. -->
-    <style name="PizzaTheme" parent="android:Theme.Light">
-    	<item name="android:actionBarStyle">@style/Psycho.BlueWhite.ActionBar</item>
-	</style>
-    
-    <style name="Psycho.BlueWhite.ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
-        <item name="android:background">#0099cc</item>
+    <style name="PizzaTheme" parent="android:Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/PizzaActionBar</item>
     </style>
+    
+    <style name="PizzaActionBar" parent="android:Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@drawable/actionbar_strip</item>
+    </style>
+    
+
 
 </resources>

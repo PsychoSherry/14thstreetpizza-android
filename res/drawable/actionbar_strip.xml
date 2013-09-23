@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+	        android:src="@drawable/bg"
+	        android:tileMode="repeat" />
+    </item>
+
+    <item android:top="43dp">
+        <bitmap
+            android:src="@drawable/stripbar"
+	        android:tileMode="repeat" 
+            android:gravity="bottom|center" />
+    </item>
+</layer-list>
