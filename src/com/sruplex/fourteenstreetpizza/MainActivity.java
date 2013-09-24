@@ -110,7 +110,7 @@ public class MainActivity extends Activity {
                         } else {
                         	Log.v("14SP", "requested user is null");
                         	mytext.setText("Login Failed");
-                        	
+                        	progress.setVisibility(ProgressBar.INVISIBLE);
                             buttonLoginLogout.setEnabled(true);
                             buttonLoginLogout.setClickable(true);
                         }
