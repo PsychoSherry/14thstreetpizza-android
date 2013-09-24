@@ -36,7 +36,7 @@ public class SessionActivity extends Activity {
 					return null;
 				}
 				protected void onPostExecute(Void unused) {
-					if (APIclient.facebook_picture != null)
+//					if (APIclient.facebook_picture != null)
 						userimage.setImageBitmap(APIclient.facebook_picture);
 				}
             }.execute();

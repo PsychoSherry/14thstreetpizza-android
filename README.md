@@ -45,6 +45,7 @@ Known Issues/Bugs
 
 1. After completing your order once, if you try to order again without restarting the app, it crashes.
 2. If you start the app, and while using it you disable the GPS, the app crashes.
+3. Sometimes on slow internet connections, User DP will not be loaded due to the Facebook API Timeout.
 
 
 Competition Entry Details

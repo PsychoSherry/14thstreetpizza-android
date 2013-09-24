@@ -29,6 +29,8 @@ import com.loopj.android.http.RequestParams;
 
 public class MainActivity extends Activity {
     public static Boolean logged = false;
+    private Boolean sessionactivitystarted = false;
+    private static ProgressBar progress;
     private TextView mytext;
     private Button buttonLoginLogout;
     private Session.StatusCallback statusCallback = new SessionStatusCallback();
@@ -39,28 +41,32 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        buttonLoginLogout = (Button)findViewById(R.id.button1);
-        mytext = (TextView)findViewById(R.id.textView1);
 
-        Settings.addLoggingBehavior(LoggingBehavior.INCLUDE_ACCESS_TOKENS);
-
-        Session session = Session.getActiveSession();
-        if (session == null) {
-            if (savedInstanceState != null) {
-                session = Session.restoreSession(this, null, statusCallback, savedInstanceState);
-            }
-            if (session == null) {
-                session = new Session(this);
-            }
-            Session.setActiveSession(session);
-            if (session.getState().equals(SessionState.CREATED_TOKEN_LOADED)) {
-                session.openForRead(new Session.OpenRequest(this).setCallback(statusCallback));
-            }
-        }
-        
         if (isNetworkAvailable() && isGPSEnabled()) {
-            //////////////// updateView();
-             StartSessionActivity();
+	        	
+	        buttonLoginLogout = (Button)findViewById(R.id.button1);
+	        mytext = (TextView)findViewById(R.id.textView1);
+	        progress = (ProgressBar)findViewById(R.id.progressBar1);
+	
+	        Settings.addLoggingBehavior(LoggingBehavior.INCLUDE_ACCESS_TOKENS);
+	
+	        Session session = Session.getActiveSession();
+	        if (session == null) {
+	            if (savedInstanceState != null) {
+	                session = Session.restoreSession(this, null, statusCallback, savedInstanceState);
+	            }
+	            if (session == null) {
+	                session = new Session(this);
+	            }
+	            Session.setActiveSession(session);
+	            if (session.getState().equals(SessionState.CREATED_TOKEN_LOADED)) {
+	                session.openForRead(new Session.OpenRequest(this).setCallback(statusCallback));
+	            }
+	        }
+        
+             updateView();
+             // StartSessionActivity();
+             
         } else {
 	        final AlertDialog connectedalert = new AlertDialog.Builder(this)
 	        	.setMessage("Please connect to the Internet and Turn on GPS to use this app")
@@ -77,17 +83,20 @@ public class MainActivity extends Activity {
         }
     }
     
+   
+    
     private void updateView() {
         final Session session = Session.getActiveSession();
         if (session != null && session.isOpened()) {
+        	progress.setVisibility(ProgressBar.VISIBLE);
             mytext.setText("You're Logged in to facebook");
             Log.v("14SP",session.getAccessToken());
-            buttonLoginLogout.setText("Logout");
+//            buttonLoginLogout.setText("Logout");
 //            buttonLoginLogout.setVisibility(Button.GONE);
-            buttonLoginLogout.setOnClickListener(new OnClickListener() {
-                public void onClick(View view) { Logout(); }
-            });
-            
+//            buttonLoginLogout.setOnClickListener(new OnClickListener() {
+//                public void onClick(View view) { Logout(); }
+//            });
+             
             Request request = Request.newMeRequest(session, new Request.GraphUserCallback() {
                 @Override
                 public void onCompleted(GraphUser user, Response response) {
@@ -96,10 +105,14 @@ public class MainActivity extends Activity {
                         if (user != null) {
                             APIclient.facebook_id = user.getId();
                             APIclient.facebook_name = user.getName();
-                            CreateCustomServerSession(session);
+//                            CreateCustomServerSession(session);
+                            StartSessionActivity();
                         } else {
                         	Log.v("14SP", "requested user is null");
-                        	mytext.setText("failed");
+                        	mytext.setText("Login Failed");
+                        	
+                            buttonLoginLogout.setEnabled(true);
+                            buttonLoginLogout.setClickable(true);
                         }
                     }   
                 }   
@@ -108,16 +121,16 @@ public class MainActivity extends Activity {
 
             
         } else {
-            mytext.setText("Failed");
-            buttonLoginLogout.setText("login");
+            mytext.setText("You're not Logged In");
+            buttonLoginLogout.setText("Login");
             buttonLoginLogout.setOnClickListener(new OnClickListener() {
                 public void onClick(View view) { Login(); }
             });
         }
+
     }
     
     private void CreateCustomServerSession(Session session){
-        final ProgressBar progress = (ProgressBar)findViewById(R.id.progressBar1);
         if (!APIclient.isAuthorized()) {                
             RequestParams params = new RequestParams();
             params.put("fb_userid", APIclient.facebook_id);
@@ -159,14 +172,21 @@ public class MainActivity extends Activity {
     }
     
     private void StartSessionActivity() {
-		logged = true;
-		Intent intent = new Intent(MainActivity.this, SessionActivity.class);
-		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); 
-        getApplicationContext().startActivity(intent);
-        finish();
+    	if (!sessionactivitystarted){
+            sessionactivitystarted = true;
+			logged = true;
+			Intent intent = new Intent(MainActivity.this, SessionActivity.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); 
+	        getApplicationContext().startActivity(intent);
+	        finish();
+    	}
     }
     
     private void Login() {
+    	buttonLoginLogout.setEnabled(false);
+    	buttonLoginLogout.setClickable(false);
+        mytext.setText("Logging in");
+        progress.setVisibility(ProgressBar.VISIBLE);
         Session session = Session.getActiveSession();
         if (!session.isOpened() && !session.isClosed()) {
             session.openForRead(new Session.OpenRequest(this).setCallback(statusCallback));
@@ -179,8 +199,9 @@ public class MainActivity extends Activity {
         Session session = Session.getActiveSession();
         if (!session.isClosed()) {
             session.closeAndClearTokenInformation();
-            APIclient.unAuthorizeAPI();
+//            APIclient.unAuthorizeAPI();
             logged = false;
+//            sessionactivitystarted = false;
         }
     }
 
@@ -194,6 +215,8 @@ public class MainActivity extends Activity {
     private class SessionStatusCallback implements Session.StatusCallback {
         @Override
         public void call(Session session, SessionState state, Exception exception) {
+        	buttonLoginLogout.setEnabled(false);
+        	buttonLoginLogout.setClickable(false);
             updateView();
         }
     }
