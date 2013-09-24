@@ -1,7 +1,13 @@
 package com.sruplex.fourteenstreetpizza;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -51,9 +57,24 @@ public class MainActivity extends Activity {
                 session.openForRead(new Session.OpenRequest(this).setCallback(statusCallback));
             }
         }
-
-       //////////////// updateView();
-        StartSessionActivity();
+        
+        if (isNetworkAvailable() && isGPSEnabled()) {
+            //////////////// updateView();
+             StartSessionActivity();
+        } else {
+	        final AlertDialog connectedalert = new AlertDialog.Builder(this)
+	        	.setMessage("Please connect to the Internet and Turn on GPS to use this app")
+	        	.setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+	        		public void onClick(final DialogInterface dialog, final int id) {
+	        			dialog.cancel();
+	        			finish();
+	        		}
+	        	})
+		    	.setCancelable(false)
+		    	.create();
+	        
+	        connectedalert.show();
+        }
     }
     
     private void updateView() {
@@ -181,5 +202,17 @@ public class MainActivity extends Activity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Session.getActiveSession().onActivityResult(this, requestCode, resultCode, data);
+    }
+    
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager 
+              = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+    
+    private boolean isGPSEnabled(){
+    	final LocationManager manager = (LocationManager) getSystemService( Context.LOCATION_SERVICE );
+        return (manager.isProviderEnabled( LocationManager.GPS_PROVIDER));
     }
 }
