@@ -29,17 +29,24 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dip"
-        android:layout_weight="2" />
+        android:layout_weight="1.5" />
 
-    <ImageButton
-        android:id="@+id/button_order"
-        android:layout_width="wrap_content"
-        android:layout_height="90dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@null"
-        android:scaleType="centerInside"
+        android:gravity="center" >
+
+        <ImageButton
+            android:id="@+id/button_order"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:background="@null"
             android:onClick="OpenOrderPage"
-        android:src="@drawable/orderonline" />
+            android:scaleType="centerInside"
+            android:src="@drawable/orderonline" />
+
+    </LinearLayout>
     
     <LinearLayout
         android:layout_width="fill_parent"
@@ -59,15 +66,24 @@
             android:scaleType="centerInside"
             android:onClick="OpenAboutPage"
             android:src="@drawable/aboutus" />
+
+        <ImageButton
+            android:id="@+id/button_panic"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@null"
+            android:onClick="PanicMode"
+            android:scaleType="centerInside"
+            android:src="@drawable/red_button" />
         
         <ImageButton
             android:id="@+id/button_contact"
             android:layout_width="wrap_content"
-            android:layout_height="60dp"
+            android:layout_height="55dp"
             android:layout_gravity="center"
             android:background="@null"
-            android:scaleType="centerInside"
             android:onClick="OpenContactPage"
+            android:scaleType="centerInside"
             android:src="@drawable/contactus" />
 
     </LinearLayout>

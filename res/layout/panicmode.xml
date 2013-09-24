@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:textAlignment="center" >
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/strip_repeat"
+        android:scaleType="matrix" />
+    
+    <ScrollView 
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content">
+	   
+	   <LinearLayout
+	       android:layout_width="fill_parent"
+	       android:layout_height="fill_parent"
+	       android:layout_gravity="center"
+	       android:gravity="center"
+	       android:orientation="vertical"
+	       android:textAlignment="center" >
+
+	       <TextView
+	           android:id="@+id/textView2"
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"
+	           android:layout_gravity="center"
+	           android:layout_marginBottom="20dp"
+	           android:layout_marginTop="30dp"
+	           android:layout_weight="1"
+	           android:text="Panic Mode!"
+	           android:textAppearance="?android:attr/textAppearanceLarge"
+	           android:textSize="26sp" />
+		
+		    <TextView
+		        android:id="@+id/textView1"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="20dp"
+		        android:layout_marginRight="20dp"
+		        android:layout_weight="1"
+		        android:gravity="center"
+		        android:text="If you have placed 7 or more orders in the past, a customer representative will call you back in a moment to take your order.\n\nClick &apos;Next&apos; to continue..."
+		        android:textSize="18sp" />
+
+		    <LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_marginBottom="20dp"
+		        android:layout_marginLeft="5dp"
+		        android:layout_marginRight="5dp"
+		        android:layout_marginTop="40dp"
+		        android:layout_weight="1"
+		        android:gravity="center|top" >
+
+		        <ImageButton
+		            android:id="@+id/panic_cancel"
+		            android:layout_width="wrap_content"
+		            android:layout_height="40dp"
+		            android:background="@null"
+		            android:scaleType="centerInside"
+		            android:src="@drawable/bt_reset" />
+
+		        <ImageButton
+		            android:id="@+id/panic_done"
+		            android:layout_width="wrap_content"
+		            android:layout_height="40dp"
+		            android:background="@null"
+		            android:scaleType="centerInside"
+		            android:src="@drawable/bt_next" />
+
+		    </LinearLayout>
+		
+		</LinearLayout>
+		</ScrollView>
+</LinearLayout>

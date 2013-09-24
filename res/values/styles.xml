@@ -18,7 +18,7 @@
     </style>
     
     <style name="PizzaActionBar" parent="android:Widget.Holo.Light.ActionBar.Solid.Inverse">
-        <item name="android:background">@drawable/actionbar_strip</item>
+        <item name="android:background">@drawable/background</item>
     </style>
     
 
