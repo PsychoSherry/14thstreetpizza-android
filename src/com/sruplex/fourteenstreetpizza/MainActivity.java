@@ -98,7 +98,7 @@ public class MainActivity extends Activity {
 //            });
              
             Request request = Request.newMeRequest(session, new Request.GraphUserCallback() {
-                @Override
+                @Override 
                 public void onCompleted(GraphUser user, Response response) {
                     // If the response is successful
                     if (session == Session.getActiveSession()) {
@@ -113,6 +113,7 @@ public class MainActivity extends Activity {
                         	progress.setVisibility(ProgressBar.INVISIBLE);
                             buttonLoginLogout.setEnabled(true);
                             buttonLoginLogout.setClickable(true);
+
                         }
                     }   
                 }   
@@ -126,6 +127,10 @@ public class MainActivity extends Activity {
             buttonLoginLogout.setOnClickListener(new OnClickListener() {
                 public void onClick(View view) { Login(); }
             });
+
+//        	progress.setVisibility(ProgressBar.INVISIBLE);
+//            buttonLoginLogout.setEnabled(true);
+//            buttonLoginLogout.setClickable(true);
         }
 
     }

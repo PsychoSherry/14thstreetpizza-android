@@ -7,7 +7,8 @@ This Mobile app is an entry in the 14th Street Pizza App Challenge by **GDG Kara
 Download Link
 -------------
 
-You can download the app's APK here: https://github.com/PsychoSherry/14thstreetpizza-android/raw/master/bin/14thStreetPizza.apk
+1. Download Complete App (w/ Facebook Auth): http://bit.ly/16zcFtv
+2. Download without Facebook Auth: http://bit.ly/1b5rCbS
 
 
 So, What's Different in my App?
